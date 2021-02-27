@@ -1,0 +1,91 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+$icon-btn-border-size: 5px;
+$_icon-btn-background-light: rgba(0, 0, 0, 0.1);
+$_icon-btn-background-dark: rgba(255,255,255, 0.1);
+
+@mixin _transform($scale, $y: 0) {
+  @if $y != 0 {
+    transform: scaleX($scale) scaleY($scale) translateY($y);
+  } @else {
+    transform: scaleX($scale) scaleY($scale);
+  }
+}
+
+.icon-inline {
+  box-sizing: content-box;
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  margin-top: -0.17em;
+}
+
+.icon-block {
+  box-sizing: content-box;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-btn {
+  .icon-inline {
+    margin-top: -0.05em;
+  }
+  svg.icon {
+    @include _transform(1.35, -0.1em);
+  }
+  &.btn-sm {
+    svg.icon {
+      @include _transform(1.35);
+    }
+  }
+  &.borderless {
+    user-select: none;
+    background-color: transparent;
+    box-shadow: 0 0 0 2px transparent;
+    border: none;
+    border-radius: $border-radius-sm;
+    transition-property: background-color, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
+    &:hover {
+      transition-duration: 0ms;
+      background-color: $_icon-btn-background-light;
+      box-shadow: 0 0 0 2px $_icon-btn-background-light;
+    }
+    &:focus {
+      box-shadow: 0 0 0 4px $_icon-btn-background-light;
+    }
+    &.dark {
+      color: rgba(255, 255, 255, 0.158);
+      &:hover {
+        background-color: $_icon-btn-background-dark;
+        box-shadow: 0 0 0 2px $_icon-btn-background-dark;
+      }
+      &:focus {
+        box-shadow: 0 0 0 4px $_icon-btn-background-dark;
+      }
+    }
+  }
+  &.indicator {
+    position: relative;
+    &::after {
+      $_size: 0.5rem;
+      content: '';
+      display: block;
+      width: $_size;
+      height: $_size;
+      background-color: $red;
+      border-radius: $_size / 2;
+      position: absolute;
+      top: map-get($spacers, 1);
+      @include ltr {
+        right: map-get($spacers, 1);
+      }
+      @include rtl {
+        left: map-get($spacers, 1);
+      }
+    }
+  }
+}

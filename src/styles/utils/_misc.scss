@@ -1,0 +1,43 @@
+@import "./functions";
+@import "./variables";
+@import "./mixins";
+
+$sizes: (
+  auto: auto,
+  xxsmall: 50px,
+  xsmall: 100px,
+  small: 200px,
+  medium: 300px,
+  large: 400px,
+  xlarge: 550px,
+  xxlarge: 700px,
+);
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    // Sizing
+    @each $key, $value in $sizes {
+      .height-#{$key}#{$infix} {
+        height: $value !important;
+      }
+      .width-#{$key}#{$infix} {
+        width: $value !important;
+      }
+      .min-height-#{$key}#{$infix} {
+        min-height: $value !important;
+      }
+      .min-width-#{$key}#{$infix} {
+        min-width: $value !important;
+      }
+      .max-height-#{$key}#{$infix} {
+        max-height: $value !important;
+      }
+      .max-width-#{$key}#{$infix} {
+        max-width: $value !important;
+      }
+    }
+  }
+}
+
