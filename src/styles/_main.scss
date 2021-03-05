@@ -30,6 +30,10 @@ label {
 }
 
 .form-group {
+  .invalid-feedback, .valid-feedback {
+    display: block !important;
+    @extend .ml-2;
+  }
   &:focus-within {
     label {
       color: $color-accent-dark;

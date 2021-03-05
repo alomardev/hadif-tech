@@ -11,72 +11,91 @@
       </div>
       <div class="tab-content">
         <ng-template [ngIf]="section === 'register'">
-          <form>
+          <form [formGroup]="registerForm">
             <div class="form-group">
               <label for="fullname">الاسم الكامل<span class="text-danger">*</span></label>
-              <input class="form-control" type="text" id="fullname">
+              <input class="form-control" type="text" id="fullname" formControlName="fullname">
+              <ng-template [ngIf]="canShowError(registerForm, 'fullname')">
+                <div class="invalid-feedback d-block" *ngIf="registerForm.get('fullname').errors?.required">الحقل مطلوب</div>
+              </ng-template>
             </div>
             <div class="form-group">
               <label for="username">اسم المستخدم<span class="text-danger">*</span></label>
-              <input dir="ltr" class="form-control" type="text" id="username">
+              <input dir="ltr" class="form-control" type="text" id="username" formControlName="username">
+              <ng-template [ngIf]="canShowError(registerForm, 'username')">
+                <div class="invalid-feedback d-block" *ngIf="registerForm.get('username').errors?.required">الحقل مطلوب</div>
+              </ng-template>
             </div>
             <div class="form-group">
               <label for="email">البريد الالكتروني<span class="text-danger">*</span></label>
-              <input dir="ltr" class="form-control" type="email" id="email">
+              <input dir="ltr" class="form-control" type="email" id="email" formControlName="email">
+              <ng-template [ngIf]="canShowError(registerForm, 'email')">
+                <div class="invalid-feedback d-block" *ngIf="registerForm.get('email').errors?.required">الحقل مطلوب</div>
+                <div class="invalid-feedback d-block" *ngIf="registerForm.get('email').errors?.email">البريد الإلكتروني غير صالح</div>
+              </ng-template>
             </div>
             <div class="form-group">
               <label for="password">كلمة المرور<span class="text-danger">*</span></label>
-              <input class="form-control" type="password" id="password">
+              <input class="form-control" type="password" id="password" formControlName="password">
+              <ng-template [ngIf]="canShowError(registerForm, 'password')">
+                <div class="invalid-feedback d-block" *ngIf="registerForm.get('password').errors?.required">الحقل مطلوب</div>
+              </ng-template>
             </div>
             <div class="form-group">
               <label for="passwordMatch">إعادة كلمة المرور<span class="text-danger">*</span></label>
-              <input class="form-control" type="password" id="passwordMatch">
+              <input class="form-control" type="password" id="passwordMatch" formControlName="passwordMatch">
+              <ng-template [ngIf]="canShowError(registerForm, 'passwordMatch')">
+                <div class="invalid-feedback d-block" *ngIf="registerForm.get('passwordMatch').errors?.required">الحقل مطلوب</div>
+                <div class="invalid-feedback d-block" *ngIf="registerForm.get('passwordMatch').errors?.mismatch">كلمة المرور غير متطابقة</div>
+              </ng-template>
             </div>
             <div class="form-group">
               <label for="grade">المرحلة الدراسية<span class="text-danger">*</span></label>
-              <select class="custom-select" id="grade">
-                <option value="1">الصف الأول المتوسط</option>
-                <option value="2">الصف الثاني المتوسط</option>
-                <option value="3">الصف الثالث المتوسط</option>
+              <select class="custom-select" id="grade" formControlName="grade">
+                <option [value]="1">الصف الأول المتوسط</option>
+                <option [value]="2">الصف الثاني المتوسط</option>
+                <option [value]="3">الصف الثالث المتوسط</option>
               </select>
             </div>
             <div class="d-flex">
               <label class="mr-2" for="gender">الجنس:</label>
               <div class="custom-control custom-radio mr-2">
-                <input type="radio" id="male" name="gender" value="male" class="custom-control-input">
+                <input type="radio" id="male" name="gender" [value]="Gender.Male" class="custom-control-input" formControlName="gender">
                 <label class="custom-control-label" for="male">ذكر</label>
               </div>
               <div class="custom-control custom-radio">
-                <input type="radio" id="female" name="gender" value="female" class="custom-control-input">
+                <input type="radio" id="female" name="gender" [value]="Gender.Female" class="custom-control-input" formControlName="gender">
                 <label class="custom-control-label" for="female">أنثى</label>
               </div>
             </div>
           </form>
           <hr>
           <div class="d-flex flex-row-reverse">
-            <button type="button" class="btn btn-primary">إنشاء الحساب</button>
+            <button type="button" class="btn btn-primary" (click)="register()">إنشاء الحساب</button>
           </div>
         </ng-template>
         <ng-template [ngIf]="section === 'login'">
-          <form>
+          <form [formGroup]="loginForm">
             <div class="form-group">
-              <label for="username">اسم المستخدم أو البريد الالكتروني</label>
-              <input dir="ltr" class="form-control" type="text" id="username">
+              <label for="username">اسم المستخدم أو البريد الالكتروني<span class="text-danger">*</span></label>
+              <input dir="ltr" class="form-control" type="text" id="username" formControlName="username">
+              <div class="invalid-feedback d-block" *ngIf="canShowError(loginForm, 'username') && loginForm.get('username').errors?.required">هذا الحقل مطلوب</div>
             </div>
             <div class="form-group">
-              <label for="password">كلمة المرور</label>
-              <input class="form-control" type="password" id="password">
+              <label for="password">كلمة المرور<span class="text-danger">*</span></label>
+              <input class="form-control" type="password" id="password" formControlName="password">
+              <div class="invalid-feedback d-block" *ngIf="canShowError(loginForm, 'password') && loginForm.get('password').errors?.required">هذا الحقل مطلوب</div>
             </div>
             <div class="form-inline">
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="remember">
+                <input type="checkbox" class="custom-control-input" id="remember" formControlName="remember" [value]="true">
                 <label class="custom-control-label" for="remember">ابق متصلًا</label>
               </div>
             </div>
           </form>
           <hr>
           <div class="d-flex flex-row-reverse">
-            <button type="button" class="btn btn-primary">تسجيل الدخول</button>
+            <button type="button" class="btn btn-primary" (click)="login()">تسجيل الدخول</button>
           </div>
         </ng-template>
       </div>

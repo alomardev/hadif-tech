@@ -3,7 +3,7 @@ $-subtitle-font-size: 1.44em;
 .login-page {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, darken($color-accent-dark, 5%), $color-accent-dark, $color-accent-base);
+  background: linear-gradient(180deg, darken($color-accent-dark, 5%), $color-accent-dark 30%, $color-accent-base 100%);
   min-height: 100vh;
   .footer {
     margin-left: map-get($spacers, 3);
@@ -19,8 +19,8 @@ $-subtitle-font-size: 1.44em;
     margin-right: auto;
     .title-wrapper {
       color: $color-primary-white;
-      margin-top: map-get($spacers, 5);
-      margin-bottom: map-get($spacers, 4);
+      margin-top: map-get($spacers, 5) + map-get($spacers, 3);
+      margin-bottom: map-get($spacers, 5);
       font-weight: $font-weight-medium;
       text-align: center;
       .title {

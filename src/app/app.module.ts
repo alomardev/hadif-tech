@@ -7,6 +7,8 @@ import { MasterLayoutComponent } from './layout/master-layout/master-layout.comp
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { PageContentComponent } from './pages/page-content/page-content.component';
 import { UiFooterComponent } from './ui-blocks/ui-footer/ui-footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ShowErrorPipe } from './pipes/show-error.pipe';
 
 
 @NgModule({
@@ -17,10 +19,12 @@ import { UiFooterComponent } from './ui-blocks/ui-footer/ui-footer.component';
     PageLoginComponent,
     PageContentComponent,
     UiFooterComponent,
+    ShowErrorPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
