@@ -1,0 +1,98 @@
+{
+  "grades": [{
+    "id": "c9299867-3e91-5894-8ca8-be4dd7eda5b4",
+    "grade": 1,
+    "name": "الصف الأول المتوسط",
+    "book": { "id": "3b839d59-9ce7-5c0d-99e8-9d81ec180769", "name": "كتاب الحاسب الآلي للصف الأول المتوسط", "file": null },
+    "subjects": [
+      {
+        "id": "1e883431-6743-5b2e-bd93-a66c3accec69",
+        "title": "الفصل الدراسي الأول",
+        "type": "chapter",
+        "subjects": [
+          {
+            "id": "12c243aa-86aa-50ec-b9b3-6252a86225c9",
+            "type": "unit",
+            "title": "أفهم حاسبي (أساسيات التقنية الرقمية)",
+            "subjects": [
+              {
+                "id": "f2cb1f62-69d2-5686-b397-28ad2b3a4274",
+                "title": "تمثيل البيانات في الأجهزة الرقمية",
+                "type": "lesson"
+              },
+              {
+                "id": "73671565-028c-5259-93e1-5a81cde65c75",
+                "title": "وحدات القياس",
+                "type": "lesson"
+              },
+              {
+                "id": "ed20855c-9d8e-5d47-b8fb-056d8ab09e5d",
+                "title": "البيانات والمعلومات",
+                "type": "lesson"
+              },
+              {
+                "id": "ef0155d7-7432-5d77-82ba-8b9e6709c066",
+                "title": "التقنية الرقمية",
+                "type": "lesson"
+              },
+              {
+                "id": "a7e3b112-a135-5cdd-8d0f-b0f5acc43841",
+                "title": "الجهاز الرقمي والحاسب",
+                "type": "lesson"
+              },
+              {
+                "id": "4f48340c-d500-54ae-97fb-d9579bc8f5a2",
+                "title": "أنواع الحاسب",
+                "type": "lesson"
+              }
+            ]
+          },
+          {
+            "id": "6a6e0cf3-f7c5-5cb3-b894-44cb1bbd7407",
+            "type": "unit",
+            "title": "أتعرف على حاسوي (مكونات الحاسب المادية وملحقاته)",
+            "subjects": [
+              {
+                "id": "e666a2e3-ee54-535e-8052-70ace0231f00",
+                "title": "مكونات الحاسب",
+                "type": "lesson"
+              },
+              {
+                "id": "ff2b76f8-b344-5012-a993-6cda984cd211",
+                "title": "المكونات المادية للحاسب الشخصي",
+                "type": "lesson"
+              }
+            ]
+          },
+          {
+            "id": "e5b28c07-81f4-5a11-8be7-2e8a46ee0fa0",
+            "type": "unit",
+            "title": "أشغل حاسوبي (أنظمة تشغيل الحاسب والأجهزة الذكية)",
+            "subjects": [
+              {
+                "id": "ea5d6930-af3b-5db0-b2c2-21c6312aa400",
+                "title": "نظام التشغيل (Operating System)",
+                "type": "lesson"
+              },
+              {
+                "id": "c7a530d3-65ab-5709-bb9d-f570c1385fd5",
+                "title": "مهام نظام التشغيل",
+                "type": "lesson"
+              },
+              {
+                "id": "2f0aa9fe-a911-5243-a37e-470fc14fea5d",
+                "title": "أنظمة تشغيل الحاسب (Computer Operating Systems)",
+                "type": "lesson"
+              },
+              {
+                "id": "8582398c-13a2-5ef2-98d2-b839982664fa",
+                "title": "أنظمة تشغيل الأجهزة الذكية (Smart Devices OS)",
+                "type": "lesson"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }]
+}

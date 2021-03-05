@@ -1,25 +1,25 @@
 import { QuestionType, SubjectType } from "./enums";
 
 export interface IGrade {
-  id: string;
+  id: string | number;
   grade: number;
   name: string;
   book: IBook;
   subjects: ISubject[];
-  questions: IQuestion[];
+  questions?: IQuestion[];
 }
 
 export interface IBook {
-  id: string;
+  id: string | number;
   name: string;
   file: string;
 }
 
 export interface ISubject {
-  id: string;
+  id: string | number;
   title: string;
   description?: string;
-  pageReference: string;
+  pageReference?: number;
   type: SubjectType;
   subjects?: ISubject[];
   slides?: ISlide[];
@@ -29,19 +29,19 @@ export interface ISubject {
 }
 
 export interface ISlide {
-  id: string;
+  id: string | number;
   name: string;
   file: string;
 }
 
 export interface IAssignment {
-  id: string;
+  id: string | number;
   name: string;
   file: string;
 }
 
 export interface ILecture {
-  id: string;
+  id: string | number;
   name: string;
   description?: string;
   file: string;
@@ -53,13 +53,13 @@ export interface ILecture {
 }
 
 export interface IQuiz {
-  id: string;
+  id: string | number;
   questions: IQuestion[];
   length: number;
 }
 
 export interface IQuestion {
-  id: string;
+  id: string | number;
   label: string;
   type: QuestionType;
   options?: IMultiChoiceQuestionOptions | IMultiAnswersQuestionOptions;
