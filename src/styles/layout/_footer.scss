@@ -1,0 +1,11 @@
+$footer-height: 64px;
+.footer {
+  background-color: $color-accent-dark;
+}
+
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+  color: $color-accent-lighter;
+  height: $footer-height;
+}

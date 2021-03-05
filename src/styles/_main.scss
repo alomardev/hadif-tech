@@ -1,3 +1,38 @@
 @import 'overrides';
 @import 'bootstrap/bootstrap';
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/misc';
 @import 'icons';
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/login-page';
+
+body, html {
+  background-color: $color-main-background;
+  min-height: 100vh;
+}
+
+.master-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .main-wrapper {
+    flex: 1 0 auto;
+  }
+}
+
+label {
+  color: $color-primary-gray-darker;
+  @extend .ml-2;
+}
+
+.form-group {
+  &:focus-within {
+    label {
+      color: $color-accent-dark;
+    }
+  }
+}

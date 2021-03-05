@@ -1,0 +1,6 @@
+<span [ngClass]="{ 'icon-inline': type === 'inline', 'icon-block': type === 'block' }">
+  <svg *ngIf="name === 'chevron-down'" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" [attr.width]="size" [attr.height]="size">
+    <path fill="none" [attr.stroke]="color" stroke-linecap="round" stroke-linejoin="round" [attr.stroke-width]="stroke"
+      d="M6 9l6 6 6-6" />
+  </svg>
+</span>

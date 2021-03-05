@@ -1,9 +1,9 @@
 @import '../bootstrap/mixins/breakpoints';
 @import './functions';
 
-@mixin ul-reset($_padding: 0, $_margin: 0) {
-  padding: $_padding;
-  margin: $_margin;
+@mixin ul-reset($-padding: 0, $-margin: 0) {
+  padding: $-padding;
+  margin: $-margin;
   list-style: none;
 }
 
@@ -15,7 +15,12 @@
   margin: 0;
 }
 
-@mixin ltr {  
+@mixin a-reset {
+  color: inherit;
+  text-decoration: none;
+}
+
+@mixin ltr {
   #{$ltr-selector} {
   @content;
   }
@@ -28,13 +33,13 @@
 }
 
 
-@mixin svg-bg($size, $color, $svg) {
+@mixin svg-bg($size, $color, $svg, $stroke: 2) {
   $color: to-rgba($color);
   @if (map-has-key($icons-map, $svg)) {
     $svg: map-get($icons-map, $svg);
   }
-  $___replaced-data: url-encode(str-replace(str-replace($svg, "{{s}}", $size), "{{c}}", $color));
-  background-image: url("data:image/svg+xml;charset=utf8,#{$___replaced-data}");
+  $-__replaced-data: url-encode(str-replace(str-replace(str-replace($svg, "{{stroke}}", $stroke), "{{s}}", $size), "{{c}}", $color));
+  background-image: url("data:image/svg+xml;charset=utf8,#{$-__replaced-data}");
   background-repeat: no-repeat;
   background-position: center;
   background-size: $size $size;
@@ -67,3 +72,8 @@
   scrollbar-face-color: $foreground-color;
   scrollbar-track-color: $background-color;
 }
+
+@mixin gradient($name, $direction: 0deg) {
+  background-image: linear-gradient($direction, #{map-get($gradients, $name)});
+}
+

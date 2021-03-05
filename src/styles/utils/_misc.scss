@@ -2,7 +2,7 @@
 @import "./variables";
 @import "./mixins";
 
-$sizes: (
+$-sizes: (
   auto: auto,
   xxsmall: 50px,
   xsmall: 100px,
@@ -13,12 +13,14 @@ $sizes: (
   xxlarge: 700px,
 );
 
+$-underlay-index: 3000;
+
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
     // Sizing
-    @each $key, $value in $sizes {
+    @each $key, $value in $-sizes {
       .height-#{$key}#{$infix} {
         height: $value !important;
       }
@@ -41,3 +43,35 @@ $sizes: (
   }
 }
 
+.underlay-relative {
+  position: relative !important;
+}
+
+.underlay-absolute {
+  position: absolute !important;
+}
+
+.underlay-relative, .underlay-absolute {
+  > * {
+    position: relative;
+    z-index: $-underlay-index + 1 !important;
+  }
+  > .underlay {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.03);
+    z-index: $-underlay-index !important;
+    &.transparent {
+      background-color: transparent;
+    }
+  }
+}
+
+.flex-even {
+  flex: 1;
+}

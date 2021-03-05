@@ -1,0 +1,124 @@
+$-login-page-max-width: 400px;
+$-subtitle-font-size: 1.44em;
+.login-page {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, darken($color-accent-dark, 5%), $color-accent-dark, $color-accent-base);
+  min-height: 100vh;
+  .footer {
+    margin-left: map-get($spacers, 3);
+    margin-right: map-get($spacers, 3);
+    border-top: 1px solid $color-divider-dark-normal;
+    background-color: transparent;
+    margin-top: auto;
+  }
+
+  .login-wrapper {
+    width: $-login-page-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    .title-wrapper {
+      color: $color-primary-white;
+      margin-top: map-get($spacers, 5);
+      margin-bottom: map-get($spacers, 4);
+      font-weight: $font-weight-medium;
+      text-align: center;
+      .title {
+        margin-bottom: 0.1rem;
+      }
+      .subtitle {
+        color: $color-accent-light;
+        font-size: $-subtitle-font-size;
+      }
+    }
+
+    .tabs {
+      background-color: $color-primary-white;
+      border-radius: map-get($radius, 'card');
+      overflow: hidden;
+      margin-bottom: map-get($spacers, 4);
+      box-shadow: 0 11px 11px -6px $color-divider-normal,
+                  0 2px 6px 1px $color-divider-normal;
+      .tab-buttons {
+        @extend .clearfix;
+        background-color: $color-accent-lighter;
+        .tab-btn {
+          cursor: pointer !important;
+          width: 50%;
+          @include ltr {
+            float: left;
+          }
+          @include rtl {
+            float: right;
+          }
+          padding: map-get($spacers, 3) map-get($spacers, 2);
+          color: $color-accent-dark;
+          text-align: center;
+          border-top-left-radius: map-get($radius, 'card');
+          border-top-right-radius: map-get($radius, 'card');
+          &.active {
+            background-color: $color-primary-white;
+            position: relative;
+            font-weight: $font-weight-medium;
+            &::after, &::before {
+              content: '';
+              display: block;
+              height: 50%;
+              background-color: mix(red, transparent);
+              width: map-get($radius, 'card') * 4;
+              position: absolute;
+              bottom: 0;
+              pointer-events: none;
+            }
+            &::before {
+              background-color: $color-primary-white;
+            }
+            &::after {
+              background-color: $color-accent-lighter;
+            }
+            &:first-child {
+              &::after, &::before {
+                @include ltr {
+                  right: map-get($radius, 'card') * -4;
+                }
+                @include rtl {
+                  left: map-get($radius, 'card') * -4;
+                }
+              }
+              &::after {
+                @include rtl {
+                  border-bottom-right-radius: map-get($radius, 'card');
+                }
+                @include ltr {
+                  border-bottom-left-radius: map-get($radius, 'card');
+                }
+              }
+            }
+            &:last-child {
+              &::after, &::before {
+                @include ltr {
+                  left: map-get($radius, 'card') * -4;
+                }
+                @include rtl {
+                  right: map-get($radius, 'card') * -4;
+                }
+              }
+              &::after {
+                @include rtl {
+                  border-bottom-left-radius: map-get($radius, 'card');
+                }
+                @include ltr {
+                  border-bottom-right-radius: map-get($radius, 'card');
+                }
+              }
+            }
+          }
+        }
+      }
+      .tab-content {
+        padding: map-get($spacers, 3);
+      }
+    }
+  }
+
+}

@@ -1,0 +1,39 @@
+<header class="header">
+  <div class="brand">
+    <div class="brand-badge">هادف</div>
+  </div>
+  <nav class="nav-menu">
+    <ul>
+      <li class="menu-item" [ngClass]="{ 'has-submenu': item.menu?.length }" *ngFor="let item of (layoutService.getMenu() | async)">
+        <span class="menu-item-label"><a class="menu-link" [routerLink]="item.url">{{ item.label }} <app-icon *ngIf="item.menu?.length" name='chevron-down' [size]="20"></app-icon></a></span>
+        <ul class="submenu" *ngIf="item.menu?.length">
+          <li class="submenu-item" *ngFor="let subitem of item.menu"><a class="submenu-link" [routerLink]="subitem.url">{{ subitem.label }}</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="login-item" (click)="loginPopupIsShown = !loginPopupIsShown">
+    <span class="login-item-label"><app-icon name='chevron-down' [size]="20"></app-icon> تسجيل الدخول</span>
+  </div>
+  <div class="login-popup-wrapper underlay-absolute" *ngIf="loginPopupIsShown">
+    <div class="login-popup" (clickOutside)="loginPopupIsShown = false">
+      <input type="text" class="form-control mb-2" placeholder="اسم المستخدم">
+      <input type="password" class="form-control mb-2" placeholder="كلمة المرور">
+      <div class="ml-1 custom-control custom-checkbox mb-3 mt-3">
+        <input type="checkbox" class="custom-control-input" id="remember">
+        <label class="custom-control-label" for="remember">ابق متصلًا</label>
+      </div>
+      <div class="d-flex">
+        <button type="button" class="btn btn-outline-primary flex-even mr-1">إنشاء حساب</button>
+        <button type="button" class="btn btn-primary flex-even ml-1">تسجيل الدخول</button>
+      </div>
+    </div>
+    <div class="underlay transparent" (click)="loginPopupIsShown = false"></div>
+  </div>
+</header>
+<main class="main-wrapper">
+  <router-outlet></router-outlet>
+</main>
+<footer class="footer">
+  <app-ui-footer></app-ui-footer>
+</footer>

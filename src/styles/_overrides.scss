@@ -1,1 +1,12 @@
+@import 'utils/variables';
 
+@debug mix(black, white);
+$font-family-sans-serif: 'Dubai';
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+$theme-colors: (
+  'primary': $color-accent-base,
+);
+$input-border-radius: map-get($radius, 'input');
+$custom-select-border-radius: $input-border-radius;
+$hr-border-color: $color-primary-gray;

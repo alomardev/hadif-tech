@@ -1,0 +1,89 @@
+<div class="login-page">
+  <div class="login-wrapper">
+    <div class="title-wrapper">
+      <h1 class="title">بوابة هادف</h1>
+      <h2 class="subtitle">لـتـقـنـيـــات الـحــاســـب</h2>
+    </div>
+    <div class="tabs">
+      <div class="tab-buttons">
+        <div class="tab-btn" [ngClass]="{ 'active': section === 'login' }" (click)="setSection('login')">تسجيل الدخول</div>
+        <div class="tab-btn" [ngClass]="{ 'active': section === 'register' }" (click)="setSection('register')">إنشاء حساب</div>
+      </div>
+      <div class="tab-content">
+        <ng-template [ngIf]="section === 'register'">
+          <form>
+            <div class="form-group">
+              <label for="fullname">الاسم الكامل<span class="text-danger">*</span></label>
+              <input class="form-control" type="text" id="fullname">
+            </div>
+            <div class="form-group">
+              <label for="username">اسم المستخدم<span class="text-danger">*</span></label>
+              <input dir="ltr" class="form-control" type="text" id="username">
+            </div>
+            <div class="form-group">
+              <label for="email">البريد الالكتروني<span class="text-danger">*</span></label>
+              <input dir="ltr" class="form-control" type="email" id="email">
+            </div>
+            <div class="form-group">
+              <label for="password">كلمة المرور<span class="text-danger">*</span></label>
+              <input class="form-control" type="password" id="password">
+            </div>
+            <div class="form-group">
+              <label for="passwordMatch">إعادة كلمة المرور<span class="text-danger">*</span></label>
+              <input class="form-control" type="password" id="passwordMatch">
+            </div>
+            <div class="form-group">
+              <label for="grade">المرحلة الدراسية<span class="text-danger">*</span></label>
+              <select class="custom-select" id="grade">
+                <option value="1">الصف الأول المتوسط</option>
+                <option value="2">الصف الثاني المتوسط</option>
+                <option value="3">الصف الثالث المتوسط</option>
+              </select>
+            </div>
+            <div class="d-flex">
+              <label class="mr-2" for="gender">الجنس:</label>
+              <div class="custom-control custom-radio mr-2">
+                <input type="radio" id="male" name="gender" value="male" class="custom-control-input">
+                <label class="custom-control-label" for="male">ذكر</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="female" name="gender" value="female" class="custom-control-input">
+                <label class="custom-control-label" for="female">أنثى</label>
+              </div>
+            </div>
+          </form>
+          <hr>
+          <div class="d-flex flex-row-reverse">
+            <button type="button" class="btn btn-primary">إنشاء الحساب</button>
+          </div>
+        </ng-template>
+        <ng-template [ngIf]="section === 'login'">
+          <form>
+            <div class="form-group">
+              <label for="username">اسم المستخدم أو البريد الالكتروني</label>
+              <input dir="ltr" class="form-control" type="text" id="username">
+            </div>
+            <div class="form-group">
+              <label for="password">كلمة المرور</label>
+              <input class="form-control" type="password" id="password">
+            </div>
+            <div class="form-inline">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="remember">
+                <label class="custom-control-label" for="remember">ابق متصلًا</label>
+              </div>
+            </div>
+          </form>
+          <hr>
+          <div class="d-flex flex-row-reverse">
+            <button type="button" class="btn btn-primary">تسجيل الدخول</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <app-ui-footer></app-ui-footer>
+  </footer>
+</div>

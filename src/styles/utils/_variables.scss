@@ -1,10 +1,52 @@
-@import '../bootstrap/variables';
-
 $icons-map: () !default;
 
 $icons-map: map-merge(
   (
     'arrow-down': '<svg xmlns="http://www.w3.org/2000/svg" width="{{s}}" height="{{s}}" viewBox="0 0 24 24"><path fill="{{c}}" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z"/></svg>',
+    'chevron-down': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="{{s}}" height="{{s}}"><path fill="none" stroke="{{c}}" stroke-linecap="round" stroke-linejoin="round" stroke-width="{{stroke}}" d="M6 9l6 6 6-6"/></svg>',
   ),
   $icons-map
 );
+
+$color-main-background: #f2f2f2;
+$color-accent-base: #9f00b9;
+$color-accent-dark: #750489;
+$color-accent-washed: #a686b2;
+$color-accent-washed-light: #e3c1e0;
+$color-accent-light: #ce98cb;
+$color-accent-highlight: rgba(159, 0, 185, 0.14);
+$color-accent-lighter: #dcbce5;
+$color-accent-focus: #c977eb;
+$color-accent-washed-dark: #794f87;
+$color-primary-gray-light: #e6e6e6;
+$color-primary-white: #ffffff;
+$color-primary-gray-dark: #a0a0a0;
+$color-primary-gray-lighter: #f2f2f2;
+$color-primary-gray: #c7c7c7;
+$color-primary-gray-darker: #828282;
+$color-primary-black: #000000;
+$color-primary-red: #b54d4d;
+$color-primary-red-washed: #be8484;
+$color-primary-red-washed-light: #efd3d3;
+$color-primary-red-darker: #842828;
+$color-primary-almost-black: #444444;
+$color-primary-gray-darkerer: #666666;
+$color-divider-heavy: rgba(0, 0, 0, 0.30);
+$color-divider-normal: rgba(0, 0, 0, 0.15);
+$color-divider-lighter: rgba(0, 0, 0, 0.05);
+$color-divider-dark-normal: rgba(255, 255, 255, 0.17);
+$color-accent-washed-blue: #6F83E0;
+
+$gradients: (
+  'header-decoration': ($color-accent-dark, $color-accent-base, $color-accent-washed-blue),
+  'badge': (saturate($color-accent-dark, 10%), saturate($color-accent-base, 10%)),
+);
+
+$radius: (
+  'default': 4px,
+  'submenu': 10px,
+  'card': 10px,
+  'input': 6px,
+);
+
+$font-weight-medium: 500;

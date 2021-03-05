@@ -27,7 +27,6 @@
   @if $color == currentColor {
     @return $color;
   }
-  
   @if (alpha($color) < 1) {
     @return "rgba(#{red($color)}, #{green($color)}, #{blue($color)}, #{alpha($color)})";
   } @else {
