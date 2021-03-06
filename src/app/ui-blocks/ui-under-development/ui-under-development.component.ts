@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ui-under-development',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ui-under-development.component.scss']
 })
 export class UiUnderDevelopmentComponent implements OnInit {
+
+  @Input() pageName: string;
 
   constructor() { }
 

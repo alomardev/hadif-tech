@@ -15,7 +15,7 @@ export class DataService {
     if (result) {
       return delayedSuccess(result);
     } else {
-      return delayedError();
+      return delayedError('');
     }
   }
 

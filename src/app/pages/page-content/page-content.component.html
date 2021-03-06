@@ -20,3 +20,6 @@
     </div>
   </app-content-explorer-scaffold>
 </ng-template>
+<ng-template [ngIf]="!grade && gradeNumber <= 3 && gradeNumber >= 2">
+  <app-ui-under-development [pageName]="gradeNumber === 3 ? 'الصف الثالث المتوسط' : 'الصف الثاني المتوسط'"></app-ui-under-development>
+</ng-template>

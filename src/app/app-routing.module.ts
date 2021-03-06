@@ -17,15 +17,16 @@ import { PageSlidesComponent } from './pages/page-slides/page-slides.component';
 const routes: Routes = [
   { path: 'login', component: PageLoginComponent },
   { path: 'register', component: PageLoginComponent },
-  { path: 'resources', component: PageResourcesComponent },
-  { path: 'about', component: PageAboutComponent },
-  { path: 'contact-us', component: PageContactUsComponent },
 
   { path: '', redirectTo: 'content/1', pathMatch: 'full' }, // Utilize auth guard
   {
     path: '',
     component: MasterLayoutComponent,
     children: [
+      { path: 'resources', component: PageResourcesComponent },
+      { path: 'about', component: PageAboutComponent },
+      { path: 'contact-us', component: PageContactUsComponent },
+
       { path: 'content/:grade', component: PageContentComponent },
       { path: 'content/:grade/lectures', component: PageLecturesComponent },
       { path: 'content/:grade/assignments', component: PageAssignmentsComponent },

@@ -28,6 +28,7 @@ export class PageContentComponent implements OnInit, OnDestroy {
     { icon: 'quiz', callback: console.log, enable: s => !!s.quizzes?.length },
   ];
 
+  gradeNumber: number;
   grade: IGrade;
   private routerParamSubscription: Subscription;
 
@@ -35,9 +36,11 @@ export class PageContentComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.routerParamSubscription = this.activatedRoute.params.subscribe(params => {
+      this.grade = null;
+      this.gradeNumber = +params.grade;
       this.dataService.getGrade(+params.grade).subscribe(grade => {
         this.grade = grade;
-      });
+      }, error => {});
     });
   }
 
