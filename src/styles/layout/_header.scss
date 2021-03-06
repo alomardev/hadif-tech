@@ -158,4 +158,7 @@ $-badge-height: 34px;
     @extend %popup-style;
     padding: map-get($spacers, 2);
   }
+  .active {
+    color: $color-accent-dark;
+  }
 }

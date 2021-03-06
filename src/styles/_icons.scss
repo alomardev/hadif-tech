@@ -4,7 +4,7 @@
 .icon-inline {
   box-sizing: content-box;
   display: inline-block;
-  & > svg {
+  > svg {
     margin-top: -0.1em;
   }
 }
@@ -12,5 +12,8 @@
 .icon-block {
   box-sizing: content-box;
   display: block;
+  > svg {
+    display: block;
+  }
 }
 

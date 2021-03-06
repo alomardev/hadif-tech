@@ -1,1 +1,22 @@
- 
+<ng-template [ngIf]="grade">
+  <app-content-explorer-scaffold [title]="grade.name" [link]="{ path: '/register', label: 'تسجيل الدخول' }">
+    <div class="content-links">
+      <div class="spacer" *ngFor="let l of links">
+        <a class="content-link" [routerLink]="l.link">
+          <div class="icon-container">
+            <app-icon type="block" [name]="l.icon" [size]="null" [stroke]="1.5"></app-icon>
+          </div>
+          <div class="label">{{ l.label }}</div>
+        </a>
+      </div>
+    </div>
+    <div class="subjects-wrapper card">
+      <!-- <div class="search-box">
+        <input type="text" class="form-control" placeholder="بحث في المنهج">
+      </div> -->
+      <div class="list-container">
+        <app-subjects-list [subjects]="grade.subjects" [actions]="subjectsListActions"></app-subjects-list>
+      </div>
+    </div>
+  </app-content-explorer-scaffold>
+</ng-template>

@@ -7,6 +7,9 @@ $font-weight-bold: bold;
 $theme-colors: (
   'primary': $color-accent-base,
 );
+$body-color: $color-primary-gray-darker;
+$input-placeholder-color: $color-primary-gray-dark;
 $input-border-radius: map-get($radius, 'input');
+$card-border-radius: map-get($radius, 'card');
 $custom-select-border-radius: $input-border-radius;
 $hr-border-color: $color-primary-gray;

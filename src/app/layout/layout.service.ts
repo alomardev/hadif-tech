@@ -11,17 +11,17 @@ export class LayoutService {
     {
       label: 'الصفوف الدراسية',
       menu: [
-        { label: 'الصف الأول المتوسط', url: '/grades/1' },
-        { label: 'الصف الثاني المتوسط', url: '/grades/2' },
-        { label: 'الصف الثالث المتوسط', url: '/grades/3' },
+        { label: 'الصف الأول المتوسط', url: '/content/1' },
+        { label: 'الصف الثاني المتوسط', url: '/content/2' },
+        { label: 'الصف الثالث المتوسط', url: '/content/3' },
       ],
     },
     {
       label: 'الشرح التفاعلي',
       menu: [
-        { label: 'الصف الأول المتوسط', url: '/grades/1/lectures' },
-        { label: 'الصف الثاني المتوسط', url: '/grades/2/lectures' },
-        { label: 'الصف الثالث المتوسط', url: '/grades/3/lectures' },
+        { label: 'الصف الأول المتوسط', url: '/content/1/lectures' },
+        { label: 'الصف الثاني المتوسط', url: '/content/2/lectures' },
+        { label: 'الصف الثالث المتوسط', url: '/content/3/lectures' },
       ],
     },
     { label: 'مصادر علمية', url: '/resources' },
@@ -29,12 +29,12 @@ export class LayoutService {
     { label: 'تواصل معنا', url: '/contact-us' },
   ];
 
-  private $menu = new BehaviorSubject<MenuItem[]>(this.menu);
+  private menu$ = new BehaviorSubject<MenuItem[]>(this.menu);
 
   constructor() { }
 
   getMenu(): Observable<MenuItem[]> {
-    return this.$menu;
+    return this.menu$;
   }
 
 }

@@ -1,0 +1,69 @@
+$-link-height: 50px;
+$-icon-spacing: 5px;
+$-icon-container-size: $-link-height - $-icon-spacing * 2;
+$-gutter: map-get($spacers, 4);
+.content-wrapper {
+  .content-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: $-gutter / -2;
+    margin-right: $-gutter / -2;
+    margin-top: $-gutter / -2;
+    margin-bottom: $-gutter / -2;
+    padding-top: map-get($spacers, 3);
+    padding-bottom: map-get($spacers, 5);
+    justify-content: space-between;
+    .spacer {
+      width: 33.33%;
+      padding: $-gutter / 2;
+    }
+    .content-link {
+      display: flex;
+      height: $-link-height;
+      border: 1px solid $color-accent-washed;
+      background-color: $color-primary-white;
+      border-radius: $-link-height / 2;
+      align-items: center;
+      box-shadow: 0 12px 19px -9px $color-accent-light, 0 0 0 0 transparent;
+      transition: background-color 200ms linear, border-color 200ms linear, box-shadow 200ms linear;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        // background-color: mix(saturate($color-accent-highlight, 50%), white);
+        border-color: $color-accent-base;
+        box-shadow: 0 12px 19px -9px $color-accent-light, 0 7px 21px -9px mix($color-accent-base, transparent, 90%);
+      }
+      .label {
+        text-align: center;
+        flex: 1 1 auto;
+        color: $color-accent-dark;
+        font-weight: $font-weight-medium;
+        font-size: 1.1em;
+      }
+      .icon-container {
+        width: $-icon-container-size;
+        height: $-icon-container-size;
+        background-color: $color-accent-highlight;
+        border-radius: 50%;
+        @include rtl {
+          margin-right: $-icon-spacing;
+        }
+        @include ltr {
+          margin-left: $-icon-spacing;
+        }
+        padding: $-icon-spacing;
+        color: $color-accent-base;
+      }
+    }
+  }
+
+  .search-box {
+    @extend .p-2;
+  }
+
+  // TODO: REMOVE
+  li.type-chapter {
+    margin: map-get($spacers, 1) !important;
+    border-radius: map-get($radius, 'card') - 4px;
+  }
+}

@@ -1,0 +1,22 @@
+$-content-max-width: 900px;
+.content-wrapper {
+  max-width: $-content-max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  .title-wrapper {
+    text-align: center;
+    margin-top: map-get($spacers, 4);
+    margin-bottom: map-get($spacers, 3);
+    .title {
+      @extend .h4;
+      color: $color-accent-dark;
+      font-weight: $font-weight-medium;
+    }
+    .link {
+      @extend .h6;
+      color: $color-accent-washed;
+      font-weight: $font-weight-medium;
+    }
+  }
+}

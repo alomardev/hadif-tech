@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Gender } from 'src/app/models/enums';
+import { AuthService } from 'src/app/services/auth.services';
 
 @Component({
   selector: 'app-page-login',
@@ -38,8 +39,10 @@ export class PageLoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
     private activatedRoute: ActivatedRoute,
     private location: Location,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -60,6 +63,13 @@ export class PageLoginComponent implements OnInit {
 
   login() {
     this.loginForm.markAllAsTouched();
+    if (this.loginForm.invalid) {
+      return;
+    }
+    const { username, password, remember } = this.loginForm.value;
+    this.authService.login(username, password, remember).subscribe(user => {
+      this.router.navigateByUrl(`/content/${user.grade}`);
+    });
   }
 
   canShowError(formGroup: FormGroup, controlName: string) {

@@ -6,22 +6,18 @@
 @import 'utils/misc';
 @import 'icons';
 
+@import 'layout/master-layout';
 @import 'layout/header';
 @import 'layout/footer';
+@import 'layout/content-scaffold';
+@import 'layout/content';
 @import 'layout/login-page';
+
+@import 'components/subjects-list';
 
 body, html {
   background-color: $color-main-background;
   min-height: 100vh;
-}
-
-.master-layout {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  .main-wrapper {
-    flex: 1 0 auto;
-  }
 }
 
 label {
@@ -39,4 +35,17 @@ label {
       color: $color-accent-dark;
     }
   }
+}
+
+a {
+  color: $color-accent-washed;
+  &:hover {
+    color: $color-accent-base;
+  }
+}
+
+.card {
+  border: none;
+  box-shadow: 0 11px 11px -6px $color-divider-normal, 0 2px 6px 1px $color-divider-normal;
+  overflow: hidden;
 }

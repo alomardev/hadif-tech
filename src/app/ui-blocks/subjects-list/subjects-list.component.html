@@ -1,0 +1,17 @@
+<ul class="subjects-list" *ngIf="flattenedSubjects?.length">
+  <li *ngFor="let s1 of flattenedSubjects"
+    [ngClass]="{
+      'type-chapter': s1.type === SubjectType.Chapter,
+      'type-unit': s1.type === SubjectType.Unit,
+      'type-lesson': s1.type === SubjectType.Lesson,
+      'remove-border': s1.nextType === SubjectType.Chapter,
+      'wide-border': s1.type === SubjectType.Lesson && s1.nextType === SubjectType.Unit
+    }">
+    <span class="title">{{ s1.title }}</span>
+    <div class="actions" *ngIf="s1.actions?.length">
+      <div class="action" *ngFor="let action of s1.actions" (click)="action.callback(s1)">
+        <app-icon type="block" [name]="action.icon" [size]="null" [stroke]="1.5"></app-icon>
+      </div>
+    </div>
+  </li>
+</ul>

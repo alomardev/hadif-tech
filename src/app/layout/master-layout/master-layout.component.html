@@ -13,21 +13,28 @@
     </ul>
   </nav>
   <div class="login-item" (click)="loginPopupIsShown = !loginPopupIsShown">
-    <span class="login-item-label"><app-icon name='chevron-down' [size]="20"></app-icon> تسجيل الدخول</span>
+    <span class="login-item-label" [ngClass]="{ 'active': loginPopupIsShown }">
+      <app-icon name='chevron-down' [size]="20"></app-icon>
+      <ng-template [ngIf]="!userProfile">تسجيل الدخول</ng-template>
+      <ng-template [ngIf]="userProfile">{{ userProfile.fullName }}</ng-template>
+    </span>
   </div>
   <div class="login-popup-wrapper underlay-absolute" *ngIf="loginPopupIsShown">
-    <div class="login-popup" (clickOutside)="loginPopupIsShown = false">
-      <input type="text" class="form-control mb-2" placeholder="اسم المستخدم">
-      <input type="password" class="form-control mb-2" placeholder="كلمة المرور">
+    <div class="login-popup" *ngIf="userProfile">
+      <button type="button" class="btn btn-primary w-100" (click)="logout()">تسجيل الخروج</button>
+    </div>
+    <form class="login-popup" (clickOutside)="loginPopupIsShown = false" [formGroup]="loginForm" *ngIf="!userProfile">
+      <input type="text" class="form-control mb-2" placeholder="اسم المستخدم" formControlName="username">
+      <input type="password" class="form-control mb-2" placeholder="كلمة المرور" formControlName="password">
       <div class="ml-1 custom-control custom-checkbox mb-3 mt-3">
-        <input type="checkbox" class="custom-control-input" id="remember">
+        <input type="checkbox" class="custom-control-input" id="remember" [value]="true" formControlName="remember">
         <label class="custom-control-label" for="remember">ابق متصلًا</label>
       </div>
       <div class="d-flex">
-        <button type="button" class="btn btn-outline-primary flex-even mr-1">إنشاء حساب</button>
-        <button type="button" class="btn btn-primary flex-even ml-1">تسجيل الدخول</button>
+        <a class="btn btn-outline-primary flex-even mr-1" routerLink="/register">إنشاء حساب</a>
+        <button type="button" class="btn btn-primary flex-even ml-1" (click)="login()" [disabled]="loading.login">تسجيل الدخول</button>
       </div>
-    </div>
+    </form>
     <div class="underlay transparent" (click)="loginPopupIsShown = false"></div>
   </div>
 </header>

@@ -1,0 +1,9 @@
+.master-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .main-wrapper {
+    flex: 1 0 auto;
+    margin-bottom: map-get($spacers, 4);
+  }
+}

@@ -1,0 +1,77 @@
+// @mixin -divider-top()
+$-padding-x: map-get($spacers, 3) + map-get($spacers, 1);
+$-padding-y: map-get($spacers, 2) + map-get($spacers, 1);
+$-icon-size: 22px;
+
+%padding-reset {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: $-padding-x;
+  padding-right: $-padding-x;
+  .actions {
+    @include rtl {
+      padding-left: $-padding-x;
+    }
+    @include ltr {
+      padding-right: $-padding-x;
+    }
+  }
+}
+.subjects-list {
+  color: $color-primary-gray-darker;
+  @include ul-reset;
+  li {
+    position: relative;
+    margin-left: $-padding-x;
+    margin-right: $-padding-x;
+    padding-top: $-padding-y;
+    padding-bottom: $-padding-y;
+    &.type-chapter {
+      background-color: $color-divider-lighter;
+      font-weight: $font-weight-bold;
+      @extend %padding-reset;
+    }
+    &.type-unit {
+      font-weight: $font-weight-bold;
+      border-bottom: $border-width-thick solid $color-divider-normal;
+    }
+    &.type-lesson {
+      border-bottom: $border-width-thin solid $color-divider-normal;
+    }
+    &.remove-border {
+      border: none;
+    }
+    &.wide-border {
+      border-width: $border-width-thick;
+      @extend %padding-reset;
+    }
+    &:last-child {
+      border: none;
+    }
+
+    .actions {
+      position: absolute;
+      top: calc(50% - #{$-icon-size / 2});
+      @include rtl {
+        left: 0;
+      }
+      @include ltr {
+        right: 0;
+      }
+      @extend .clearfix;
+      .action {
+        cursor: pointer;
+        width: $-icon-size;
+        height: $-icon-size;
+        @include rtl {
+          float: left;
+          margin-right: map-get($spacers, 2);
+        }
+        @include ltr {
+          float: right;
+          margin-left: map-get($spacers, 2);
+        }
+      }
+    }
+  }
+}

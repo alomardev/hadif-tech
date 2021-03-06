@@ -1,6 +1,76 @@
 <span [ngClass]="{ 'icon-inline': type === 'inline', 'icon-block': type === 'block' }">
+  <!-- Chevron Down -->
   <svg *ngIf="name === 'chevron-down'" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" [attr.width]="size" [attr.height]="size">
     <path fill="none" [attr.stroke]="color" stroke-linecap="round" stroke-linejoin="round" [attr.stroke-width]="stroke"
       d="M6 9l6 6 6-6" />
   </svg>
+
+  <!-- Lecture -->
+  <svg *ngIf="name === 'lecture'" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" [attr.width]="size" [attr.height]="size">
+    <g stroke-linecap="round" [attr.stroke-width]="stroke" [attr.stroke]="color"  fill="none" style="transform: translateX(10%)" stroke-linejoin="round">
+      <path d="M7 4l12.44 8L6.99 20V4Z"/>
+      <g stroke-linecap="round" [attr.stroke-width]="stroke" fill-rule="evenodd" [attr.stroke]="color"  fill="none" stroke-linejoin="round">
+        <path d="M3 4v3"/><path d="M3 17v3"/><path d="M3 11v2"/>
+      </g>
+    </g>
+  </svg>
+
+  <!-- Presentation -->
+  <svg *ngIf="name === 'presentation'" viewBox="0 0 24 24" [attr.width]="size" [attr.height]="size" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+      <path fill="none" fill-rule="evenodd" [attr.stroke]="color" stroke-linecap="round" stroke-linejoin="round" [attr.stroke-width]="stroke" d="M22 5c0-1.11-.9-2-2-2H4c-1.11 0-2 .89-2 2v10c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V5Z" />
+    </g>
+    <g stroke-linecap="round" [attr.stroke-width]="stroke" [attr.stroke]="color" fill="none" stroke-linejoin="round">
+      <path d="M8 21h8" />
+      <path d="M12 17v4" />
+      <path [attr.fill]="color" d="M10.55 8l3.11 2 -3.12 2V8Z" />
+    </g>
+  </svg>
+
+  <!-- Vault -->
+  <svg *ngIf="name === 'vault'" viewBox="0 0 24 24" [attr.width]="size" [attr.height]="size" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+      <path fill="none" fill-rule="evenodd" [attr.stroke]="color" stroke-linecap="round" stroke-linejoin="round" [attr.stroke-width]="stroke" d="M22 7c0-2.76-2.24-5-5-5H7C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7Z" />
+    </g>
+    <g stroke-linecap="round" [attr.stroke-width]="stroke" [attr.stroke]="color" fill="none" stroke-linejoin="round">
+      <path d="M16 13.413c.02.19.04.391.04.58 0 2.19-1.81 4-4 4 -2.2 0-4-1.81-4-4 0-2.2 1.8-4 4-4 .19 0 .39.01.58.04 1.73.25 3.112 1.63 3.37 3.37Z" />
+      <path d="M12 6h.01" />
+      <path d="M9 6h.01" />
+      <path d="M15 6h.01" />
+    </g>
+  </svg>
+
+  <!-- Quiz -->
+  <svg *ngIf="name === 'quiz'" viewBox="0 0 24 24" [attr.width]="size" [attr.height]="size" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+      <g stroke-linecap="round" [attr.stroke-width]="stroke" fill-rule="evenodd" [attr.stroke]="color" fill="none" stroke-linejoin="round">
+        <path d="M21 5c0-1.11-.9-2-2-2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5Z" />
+        <path d="M9.22 9.43c0-1.532 1.24-2.78 2.77-2.78 1.532 0 2.776 1.24 2.776 2.77s-1.03 1.99-1.84 2.49c-1.66 1.02-1.45 2.54-1.45 2.54" />
+      </g>
+    </g>
+    <path fill="none" [attr.stroke]="color" stroke-linecap="round" stroke-linejoin="round" [attr.stroke-width]="stroke" d="M11.539 17.346h.01" />
+  </svg>
+
+  <!-- Book -->
+  <svg *ngIf="name === 'book'" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" [attr.width]="size" [attr.height]="size">
+    <g stroke-linecap="round" [attr.stroke-width]="stroke" [attr.stroke]="color" fill="none" stroke-linejoin="round">
+      <path d="M4 19.5C4 18.12 5.12 17 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5C5.12 22 4 20.87 4 19.5v-15C4 3.129 5.12 2 6.5 2Z" />
+      <path d="M16 7H8" />
+      <path d="M13 12H8" />
+    </g>
+  </svg>
+
+  <!-- Paper -->
+  <svg *ngIf="name === 'paper'" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <g stroke-linecap="round" [attr.stroke-width]="stroke" [attr.stroke]="color" fill="none" stroke-linejoin="round">
+      <path d="M14 2H6c-1.1 0-2 .903-2 2v16c0 1.09.9 2 2 2h12c1.09 0 2-.91 2-2V8l-6-6Z" />
+      <path d="M14 2v6h6" />
+      <path d="M16 13H8" />
+      <path d="M16 17H8" />
+      <path d="M10 9H8" />
+    </g>
+  </svg>
+
 </span>
+
