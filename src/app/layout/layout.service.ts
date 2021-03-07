@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { filter } from 'rxjs/operators';
 import { MenuItem } from './layout';
 
 @Injectable({
@@ -31,10 +34,15 @@ export class LayoutService {
 
   private menu$ = new BehaviorSubject<MenuItem[]>(this.menu);
 
-  constructor() { }
+  constructor(private titleService: Title) {
+  }
 
   getMenu(): Observable<MenuItem[]> {
     return this.menu$;
+  }
+
+  updateTitle(title: string) {
+    this.titleService.setTitle('منصة هادف' + ' - ' + title);
   }
 
 }

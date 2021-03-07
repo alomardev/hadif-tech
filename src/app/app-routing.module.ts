@@ -14,30 +14,103 @@ import { PageQuizzesComponent } from './pages/page-quizzes/page-quizzes.componen
 import { PageResourcesComponent } from './pages/page-resources/page-resources.component';
 import { PageSlidesComponent } from './pages/page-slides/page-slides.component';
 
+export interface RoutingData {
+  pageTitle?: string;
+}
+
 const routes: Routes = [
-  { path: 'login', component: PageLoginComponent },
-  { path: 'register', component: PageLoginComponent },
+  {
+    path: 'login',
+    component: PageLoginComponent,
+    data: {
+      pageTitle: 'تسجيل الدخول',
+    } as RoutingData,
+  },
+  {
+    path: 'register',
+    component: PageLoginComponent,
+    data: {
+      pageTitle: 'إنشاء حساب',
+    } as RoutingData,
+  },
 
   { path: '', redirectTo: 'content/1', pathMatch: 'full' }, // Utilize auth guard
   {
     path: '',
     component: MasterLayoutComponent,
     children: [
-      { path: 'resources', component: PageResourcesComponent },
-      { path: 'about', component: PageAboutComponent },
-      { path: 'contact-us', component: PageContactUsComponent },
+      {
+        path: 'resources',
+        component: PageResourcesComponent,
+        data: {
+          pageTitle: 'مصادر علمية',
+        } as RoutingData,
+      },
+      {
+        path: 'about',
+        component: PageAboutComponent,
+        data: {
+          pageTitle: 'عن الموقع',
+        } as RoutingData,
+      },
+      {
+        path: 'contact-us',
+        component: PageContactUsComponent,
+        data: {
+          pageTitle: 'تواصل معنا',
+        } as RoutingData,
+      },
 
-      { path: 'content/:grade', component: PageContentComponent },
-      { path: 'content/:grade/lectures', component: PageLecturesComponent },
-      { path: 'content/:grade/assignments', component: PageAssignmentsComponent },
-      { path: 'content/:grade/quizzes', component: PageQuizzesComponent },
-      { path: 'content/:grade/book', component: PageBookComponent },
-      { path: 'content/:grade/slides', component: PageSlidesComponent },
-      { path: 'content/:grade/questions', component: PageQuestionsVaultComponent },
+      {
+        path: 'content/:grade',
+        component: PageContentComponent,
+      },
+      {
+        path: 'content/:grade/lectures',
+        component: PageLecturesComponent,
+        data: {
+          pageTitle: '',
+        } as RoutingData,
+      },
+      {
+        path: 'content/:grade/assignments',
+        component: PageAssignmentsComponent,
+        data: {
+          pageTitle: 'الأنشطة الورقية',
+        } as RoutingData,
+      },
+      {
+        path: 'content/:grade/quizzes',
+        component: PageQuizzesComponent,
+        data: {
+          pageTitle: 'الاختبارات القصيرة',
+        } as RoutingData
+      },
+      {
+        path: 'content/:grade/book',
+        component: PageBookComponent,
+        data: {
+          pageTitle: 'الكتاب',
+        } as RoutingData,
+      },
+      {
+        path: 'content/:grade/slides',
+        component: PageSlidesComponent,
+        data: {
+          pageTitle: 'العروض التقديمية',
+        } as RoutingData,
+      },
+      {
+        path: 'content/:grade/questions',
+        component: PageQuestionsVaultComponent,
+        data: {
+          pageTitle: 'خزينة الأسئلة',
+        } as RoutingData,
+      },
     ],
   },
 
-  { path: '404', component: PageNotFoundComponent },
+  { path: '404', component: PageNotFoundComponent, data: { pageTitle: '404' } as RoutingData },
   { path: '**', redirectTo: '404' },
 ];
 
