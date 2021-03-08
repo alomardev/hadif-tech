@@ -21,6 +21,7 @@ import { PageResourcesComponent } from './pages/page-resources/page-resources.co
 import { PageAboutComponent } from './pages/page-about/page-about.component';
 import { PageContactUsComponent } from './pages/page-contact-us/page-contact-us.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PageMaterialListComponent } from './pages/page-material-list/page-material-list.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     PageAboutComponent,
     PageContactUsComponent,
     PageNotFoundComponent,
+    PageMaterialListComponent,
   ],
   imports: [
     BrowserModule,

@@ -62,13 +62,22 @@
   </svg>
 
   <!-- Paper -->
-  <svg *ngIf="name === 'paper'" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <svg *ngIf="name === 'paper'" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" [attr.width]="size" [attr.height]="size">
     <g stroke-linecap="round" [attr.stroke-width]="stroke" [attr.stroke]="color" fill="none" stroke-linejoin="round">
       <path d="M14 2H6c-1.1 0-2 .903-2 2v16c0 1.09.9 2 2 2h12c1.09 0 2-.91 2-2V8l-6-6Z" />
       <path d="M14 2v6h6" />
       <path d="M16 13H8" />
       <path d="M16 17H8" />
       <path d="M10 9H8" />
+    </g>
+  </svg>
+
+  <!-- Download -->
+  <svg *ngIf="name === 'download'" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" [attr.width]="size" [attr.height]="size">
+    <g stroke-linecap="round" [attr.stroke-width]="stroke" [attr.stroke]="color" fill="none" stroke-linejoin="round">
+      <path d="M21 15v4 0c0 1.1-.9 2-2 2H5l-.01-.001c-1.11-.01-2-.9-2-2.01v-4" />
+      <path d="M7 10l5 5 5-5" />
+      <path d="M12 15l0-12" />
     </g>
   </svg>
 

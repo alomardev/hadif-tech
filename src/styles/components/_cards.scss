@@ -1,0 +1,26 @@
+$-border-spacing: 4px;
+.card {
+  border: none;
+  box-shadow: 0 11px 11px -6px $color-divider-normal, 0 2px 6px 1px $color-divider-normal;
+  overflow: hidden;
+
+  .card-header {
+    background-color: $card-bg;
+    position: relative;
+    border-bottom: none;
+    color: $color-accent-washed-dark;
+    font-weight: $font-weight-medium;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: $-border-spacing;
+      bottom: $-border-spacing;
+      left: $-border-spacing;
+      right: $-border-spacing;
+      background-color: $color-divider-lighter;
+      border-radius: map-get($radius, 'card') - $-border-spacing;
+    }
+  }
+
+}

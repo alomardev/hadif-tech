@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": "033cdb17-057e-56bf-96c6-3f676ba47ac6",
+      "id": "bb59e798-1451-54c2-9463-1423c1bbfd01",
       "fullName": "عبدالعزيز محمد الحصحوص",
       "username": "abdulaziz",
       "email": "abdulaziz@hadif.com",
@@ -9,7 +9,7 @@
       "gender": "male"
     },
     {
-      "id": "a6bbd7dd-8ff6-5518-8bf8-f91e8655bbac",
+      "id": "3546ad78-89ed-58ca-8045-c7bc43768a82",
       "fullName": "إبراهيم محمد الحصحوص",
       "username": "ibrahim",
       "email": "ibrahim@hadif.com",
@@ -17,7 +17,7 @@
       "gender": "male"
     },
     {
-      "id": "01507906-4c3b-5e48-af8d-9428298a2c84",
+      "id": "6f4e5e89-e87b-56aa-b016-cf15b0972059",
       "fullName": "عبدالرحمن محمد",
       "username": "abdulrahman",
       "email": "abdulrahman@hadif.com",
@@ -26,99 +26,99 @@
     }
   ],
   "grades": [{
-    "id": "c9299867-3e91-5894-8ca8-be4dd7eda5b4",
+    "id": "bf3823ca-c1bb-5d4c-a5ca-247fd1d9f828",
     "grade": 1,
     "name": "الصف الأول المتوسط",
-    "book": { "id": "3b839d59-9ce7-5c0d-99e8-9d81ec180769", "name": "كتاب الحاسب الآلي للصف الأول المتوسط", "file": null },
+    "book": { "id": "b083b21e-2076-5b30-8581-434d9a39e9be", "name": "كتاب الحاسب الآلي للصف الأول المتوسط", "file": null },
     "subjects": [
       {
-        "id": "1e883431-6743-5b2e-bd93-a66c3accec69",
+        "id": "993ca1eb-776a-5f9d-a16a-e0f2e17d7d4e",
         "title": "الفصل الدراسي الأول",
         "type": "chapter",
         "subjects": [
           {
-            "id": "12c243aa-86aa-50ec-b9b3-6252a86225c9",
+            "id": "27cc2459-8f7d-5c7c-b860-4a61ac510c53",
             "type": "unit",
             "title": "أفهم حاسبي (أساسيات التقنية الرقمية)",
             "subjects": [
               {
-                "id": "f2cb1f62-69d2-5686-b397-28ad2b3a4274",
+                "id": "ab7b67de-cb69-534c-b5dc-6271226560d0",
                 "title": "تمثيل البيانات في الأجهزة الرقمية",
                 "type": "lesson",
-                "lectures": [{ "id": "079732c0-5e3e-5d1e-bb18-7d33bcf4db4c", "name": "تمثيل البيانات في الأجهزة الرقمية", "file": "", "length": 900 }]
+                "lectures": [{ "id": "983ab9df-86d0-5043-8ea3-69286095c064", "name": "تمثيل البيانات في الأجهزة الرقمية", "file": "", "length": 900 }]
               },
               {
-                "id": "73671565-028c-5259-93e1-5a81cde65c75",
+                "id": "cf44c446-e254-5910-ad23-91d58c116cce",
                 "title": "وحدات القياس",
                 "type": "lesson",
-                "lectures": [{ "id": "6a404a4f-363d-5541-9b6c-8787f93167a0", "name": "وحدات القياس", "file": "", "length": 900 }]
+                "lectures": [{ "id": "edabf5e8-9ae9-5c2b-95ab-39b6b998fd17", "name": "وحدات القياس", "file": "", "length": 900 }]
               },
               {
-                "id": "ed20855c-9d8e-5d47-b8fb-056d8ab09e5d",
+                "id": "8af76765-177d-5f22-a16d-bbea2993f5b5",
                 "title": "البيانات والمعلومات",
                 "type": "lesson",
-                "lectures": [{ "id": "914b4eb4-fe2a-58a4-a19d-4fcabeb5193f", "name": "البيانات والمعلومات", "file": "", "length": 900 }]
+                "lectures": [{ "id": "3ef307c1-61b3-53c8-b375-29862994917e", "name": "البيانات والمعلومات", "file": "", "length": 900 }]
               },
               {
-                "id": "ef0155d7-7432-5d77-82ba-8b9e6709c066",
+                "id": "29af6c79-9902-537e-85e2-65c829435eb9",
                 "title": "التقنية الرقمية",
                 "type": "lesson",
-                "lectures": [{ "id": "3b37e64f-99b5-5232-8201-292659e9e7af", "name": "التقنية الرقمية", "file": "", "length": 900 }]
+                "lectures": [{ "id": "04f38615-efb1-51ed-b59b-8a0200b7b0e3", "name": "التقنية الرقمية", "file": "", "length": 900 }]
               },
               {
-                "id": "a7e3b112-a135-5cdd-8d0f-b0f5acc43841",
+                "id": "50879a0f-8cc4-5cc6-9bab-c0d2c0354095",
                 "title": "الجهاز الرقمي والحاسب",
                 "type": "lesson",
-                "lectures": [{ "id": "0c5a92a1-1d5e-5d61-87ce-fbae6cb20ee4", "name": "الجهاز الرقمي والحاسب", "file": "", "length": 900 }]
+                "lectures": [{ "id": "20792252-b4b9-5a9a-bcac-064f69b357db", "name": "الجهاز الرقمي والحاسب", "file": "", "length": 900 }]
               },
               {
-                "id": "4f48340c-d500-54ae-97fb-d9579bc8f5a2",
+                "id": "f1efd0a2-fe9e-5908-85f6-0934299da21d",
                 "title": "أنواع الحاسب",
                 "type": "lesson",
-                "lectures": [{ "id": "6f6268aa-18f7-5599-b82c-6f4605a7a7aa", "name": "أنواع الحاسب", "file": "", "length": 900 }]
+                "lectures": [{ "id": "e6c4b84a-49f0-55e1-8c20-cbf553351b7f", "name": "أنواع الحاسب", "file": "", "length": 900 }]
               }
             ]
           },
           {
-            "id": "6a6e0cf3-f7c5-5cb3-b894-44cb1bbd7407",
+            "id": "407fb815-f1ff-5977-aa30-3fb3d30dd0d3",
             "type": "unit",
             "title": "أتعرف على حاسوي (مكونات الحاسب المادية وملحقاته)",
             "subjects": [
               {
-                "id": "e666a2e3-ee54-535e-8052-70ace0231f00",
+                "id": "b33800f4-f092-5e64-ab63-f0a7fbdcf655",
                 "title": "مكونات الحاسب",
                 "type": "lesson",
-                "lectures": [{ "id": "d89586b5-304e-5e32-bf3b-30e5ce98dfcc", "name": "مكونات الحاسب", "file": "", "length": 900 }]
+                "lectures": [{ "id": "bb4b650e-1226-550b-bf59-81f303c393d5", "name": "مكونات الحاسب", "file": "", "length": 900 }]
               },
               {
-                "id": "ff2b76f8-b344-5012-a993-6cda984cd211",
+                "id": "6ce39913-04ef-50f1-8e7e-9ffebe9217c0",
                 "title": "المكونات المادية للحاسب الشخصي",
                 "type": "lesson"
               }
             ]
           },
           {
-            "id": "e5b28c07-81f4-5a11-8be7-2e8a46ee0fa0",
+            "id": "bb0ad0e8-e7c9-57a7-8dcf-36b5a6051f70",
             "type": "unit",
             "title": "أشغل حاسوبي (أنظمة تشغيل الحاسب والأجهزة الذكية)",
             "subjects": [
               {
-                "id": "ea5d6930-af3b-5db0-b2c2-21c6312aa400",
+                "id": "276a7980-b12a-50d0-b91e-993c99384d62",
                 "title": "نظام التشغيل (Operating System)",
                 "type": "lesson"
               },
               {
-                "id": "c7a530d3-65ab-5709-bb9d-f570c1385fd5",
+                "id": "71f422c2-c119-5507-a16f-925c94480fe4",
                 "title": "مهام نظام التشغيل",
                 "type": "lesson"
               },
               {
-                "id": "2f0aa9fe-a911-5243-a37e-470fc14fea5d",
+                "id": "2ee55373-776f-5657-b9cf-67281513e861",
                 "title": "أنظمة تشغيل الحاسب (Computer Operating Systems)",
                 "type": "lesson"
               },
               {
-                "id": "8582398c-13a2-5ef2-98d2-b839982664fa",
+                "id": "3b8f742c-ffce-57af-9ba8-ec3ddf19dfe2",
                 "title": "أنظمة تشغيل الأجهزة الذكية (Smart Devices OS)",
                 "type": "lesson"
               }
@@ -127,119 +127,119 @@
         ]
       },
       {
-        "id": "1e883431-6743-5b2e-bd93-a66c3accec69",
+        "id": "f427bdce-9ed8-5e6e-a9e1-c4ac9245c4fc",
         "title": "الفصل الدراسي الأول",
         "type": "chapter",
         "subjects": [
           {
-            "id": "12c243aa-86aa-50ec-b9b3-6252a86225c9",
+            "id": "6a4cc4c0-f7e1-5655-a43f-0c6366d43141",
             "type": "unit",
             "title": "أفهم حاسبي (أساسيات التقنية الرقمية)",
             "subjects": [
               {
-                "id": "f2cb1f62-69d2-5686-b397-28ad2b3a4274",
+                "id": "50cffbac-f86a-5187-85dd-c9e0c0a014d0",
                 "title": "تمثيل البيانات في الأجهزة الرقمية",
                 "type": "lesson",
-                "lectures": [{ "id": "3d1eb2e2-c441-52ba-81c4-4470c5a37d16", "name": "تمثيل البيانات في الأجهزة الرقمية", "file": "", "length": 900 }],
+                "lectures": [{ "id": "f51d9825-7ed6-53f2-9744-456c7f3897e8", "name": "تمثيل البيانات في الأجهزة الرقمية", "file": "", "length": 900 }],
                 "assignments": [
-                  { "id": "6ed45cd7-4162-50b1-bffb-a5c660bc29bf", "name": "واجب ١: تمثيل البيانات في الأجهزة الرقمية", "file": "" },
-                  { "id": "364d2c6a-13a6-524d-8b7e-be33d2a4a631", "name": "واجب ٢: تمثيل البيانات في الأجهزة الرقمية", "file": "" },
-                  { "id": "656b66b4-cdd5-52a7-863c-d414c99502ac", "name": "واجب ٣: تمثيل البيانات في الأجهزة الرقمية", "file": "" }
+                  { "id": "1e67f2d7-1cd2-59e4-bec6-231396663bc4", "name": "تمثيل البيانات في الأجهزة الرقمية", "file": "" },
+                  { "id": "d920e79b-dcf8-59ba-b6cf-ef384a9878a3", "name": "أوامر التحكم في السلحفاة", "file": "" },
+                  { "id": "6ab47ecf-25fb-5695-9ebc-216e66bc182a", "name": "سماكة الخط والتكرار", "file": "" }
                 ]
               },
               {
-                "id": "73671565-028c-5259-93e1-5a81cde65c75",
+                "id": "cd262185-fe38-5ae2-92af-4799caf83c27",
                 "title": "وحدات القياس",
                 "type": "lesson",
-                "lectures": [{ "id": "9434fd52-8999-5e46-b7a4-924b9af7550b", "name": "وحدات القياس", "file": "", "length": 900 }],
+                "lectures": [{ "id": "1b29b45b-75c3-50bd-b2cd-4715531fb023", "name": "وحدات القياس", "file": "", "length": 900 }],
                 "slides": [
-                  { "id": "f2a70410-bc15-5577-a5c4-a6b7116d1689", "name": "عرض تقديمي ١: وحدات القياس", "file": "" },
-                  { "id": "9a7aea2d-ade4-52e2-9ea2-0d57fa105063", "name": "عرض تقديمي ٢: وحدات القياس", "file": "" },
-                  { "id": "0a129a16-184c-5c82-9ef7-f990999853e8", "name": "عرض تقديمي ٣: وحدات القياس", "file": "" }
+                  { "id": "9e6b80fd-6a30-5366-8d69-d10593c363f3", "name": "تحرير المدونة", "file": "" },
+                  { "id": "14671153-e30a-530d-bdf3-0999b7ca9335", "name": "البرمجة مع لغة", "file": "" },
+                  { "id": "b8d8145c-5cd5-51fc-bd9a-7e0eb6baad0c", "name": "التخطيط للمشروع", "file": "" }
                 ]
               },
               {
-                "id": "ed20855c-9d8e-5d47-b8fb-056d8ab09e5d",
+                "id": "90eb849b-267b-5fee-b5ed-addcef047dc8",
                 "title": "البيانات والمعلومات",
                 "type": "lesson",
-                "lectures": [{ "id": "fa9757b2-56d4-5415-9060-b33d6cb78c13", "name": "البيانات والمعلومات", "file": "", "length": 900 }],
+                "lectures": [{ "id": "0111c9a3-96f1-5a8d-9e32-0b1f046a5148", "name": "برنامج قيمب دمج الصور", "file": "", "length": 900 }],
                 "assignments": [
-                  { "id": "6ed45cd7-4162-50b1-bffb-a5c660bc29bf", "name": "واجب ١: البيانات والمعلومات", "file": "" }
+                  { "id": "1c1a3855-fc34-58bd-aa9d-2d79289b5388", "name": "إضافة ملف صوتي وتحريره", "file": "" }
                 ],
                 "slides": [
-                  { "id": "f2a70410-bc15-5577-a5c4-a6b7116d1689", "name": "عرض تقديمي ١: البيانات والمعلومات", "file": "" }
+                  { "id": "49be2229-0fb7-5765-aa85-920ee3d58aaa", "name": "البرمجة مع لغة", "file": "" }
                 ],
                 "quizzes": [
                   { "id": "", "length": 1800, "questions": [] }
                 ]
               },
               {
-                "id": "ef0155d7-7432-5d77-82ba-8b9e6709c066",
+                "id": "5edfaa30-5f4a-5056-b661-fd43e3bfaaf7",
                 "title": "التقنية الرقمية",
                 "type": "lesson",
-                "lectures": [{ "id": "1eff90ac-0b93-5c8e-9900-fdc2d4fd7c9d", "name": "التقنية الرقمية", "file": "", "length": 900 }]
+                "lectures": [{ "id": "3f969dfd-b139-5a74-91f2-78b80991f62f", "name": "التقنية الرقمية", "file": "", "length": 900 }]
               },
               {
-                "id": "a7e3b112-a135-5cdd-8d0f-b0f5acc43841",
+                "id": "fa7ac00e-be7e-5896-b145-fd7f8a1d6865",
                 "title": "الجهاز الرقمي والحاسب",
                 "type": "lesson",
-                "lectures": [{ "id": "b2c00806-fb9c-5c1a-b393-3f0019f923e1", "name": "الجهاز الرقمي والحاسب", "file": "", "length": 900 }]
+                "lectures": [{ "id": "b57612a5-d64c-5a43-963d-dac575c0697c", "name": "الجهاز الرقمي والحاسب", "file": "", "length": 900 }]
               },
               {
-                "id": "4f48340c-d500-54ae-97fb-d9579bc8f5a2",
+                "id": "37aa63ca-e624-58c1-928b-af25693b8772",
                 "title": "أنواع الحاسب",
                 "type": "lesson",
-                "lectures": [{ "id": "1c6ebbb6-5a27-51d9-a08e-770c649a7d1d", "name": "أنواع الحاسب", "file": "", "length": 900 }]
+                "lectures": [{ "id": "c2360b67-c142-5609-ab8b-5f2b485a7972", "name": "أنواع الحاسب", "file": "", "length": 900 }]
               }
             ]
           },
           {
-            "id": "6a6e0cf3-f7c5-5cb3-b894-44cb1bbd7407",
+            "id": "2a2c27a2-1c3d-56ae-8cf9-9c4244ddb323",
             "type": "unit",
             "title": "أتعرف على حاسوي (مكونات الحاسب المادية وملحقاته)",
             "subjects": [
               {
-                "id": "e666a2e3-ee54-535e-8052-70ace0231f00",
+                "id": "b1551224-6113-53c8-8c06-cf893ec6ec89",
                 "title": "مكونات الحاسب",
                 "type": "lesson",
-                "lectures": [{ "id": "9d29b042-8767-533a-88f4-053c0ec9d10e", "name": "مكونات الحاسب", "file": "", "length": 900 }]
+                "lectures": [{ "id": "b3b4bca2-93c7-5401-ae59-aabbb62d8a43", "name": "مكونات الحاسب", "file": "", "length": 900 }]
               },
               {
-                "id": "ff2b76f8-b344-5012-a993-6cda984cd211",
+                "id": "ca9edf98-2f43-541e-8bae-917d57145786",
                 "title": "المكونات المادية للحاسب الشخصي",
                 "type": "lesson",
-                "lectures": [{ "id": "9f96d5af-8ae3-59ea-9b43-da86079ece16", "name": "المكونات المادية للحاسب الشخصي", "file": "", "length": 900 }]
+                "lectures": [{ "id": "ae09ac83-ae7d-5f46-9f0a-37008469c6eb", "name": "المكونات المادية للحاسب الشخصي", "file": "", "length": 900 }]
               }
             ]
           },
           {
-            "id": "e5b28c07-81f4-5a11-8be7-2e8a46ee0fa0",
+            "id": "142ee9f8-5745-51b6-a2d8-bb02b4d8d560",
             "type": "unit",
             "title": "أشغل حاسوبي (أنظمة تشغيل الحاسب والأجهزة الذكية)",
             "subjects": [
               {
-                "id": "ea5d6930-af3b-5db0-b2c2-21c6312aa400",
+                "id": "20d5cafb-37d3-592f-9076-df8a5301b098",
                 "title": "نظام التشغيل (Operating System)",
                 "type": "lesson",
-                "lectures": [{ "id": "fdcc8fb6-22df-5a12-8fcd-cc7e13fb3910", "name": "نظام التشغيل (Operating System)", "file": "", "length": 900 }]
+                "lectures": [{ "id": "15fd6731-78a8-5f1e-9e87-2554f0f5e433", "name": "نظام التشغيل (Operating System)", "file": "", "length": 900 }]
               },
               {
-                "id": "c7a530d3-65ab-5709-bb9d-f570c1385fd5",
+                "id": "15c1fe7a-9f7e-54c4-873e-5574fde0d4f7",
                 "title": "مهام نظام التشغيل",
                 "type": "lesson",
-                "lectures": [{ "id": "5b1cddb6-074b-590b-b2b7-bc1df2fe0ef7", "name": "مهام نظام التشغيل", "file": "", "length": 900 }]
+                "lectures": [{ "id": "fce4c025-4682-5f69-b4a1-f930c9c9146a", "name": "مهام نظام التشغيل", "file": "", "length": 900 }]
               },
               {
-                "id": "2f0aa9fe-a911-5243-a37e-470fc14fea5d",
+                "id": "2d0cca7d-6bda-54ac-abea-ae5198f6c7ac",
                 "title": "أنظمة تشغيل الحاسب (Computer Operating Systems)",
                 "type": "lesson",
-                "lectures": [{ "id": "cf34e14d-4c3d-524a-8f37-10d914e6d6f1", "name": "أنظمة تشغيل الحاسب (Computer Operating Systems)", "file": "", "length": 900 }]
+                "lectures": [{ "id": "45466fe4-cd0b-5f75-8e2b-0deb411092b4", "name": "أنظمة تشغيل الحاسب (Computer Operating Systems)", "file": "", "length": 900 }]
               },
               {
-                "id": "8582398c-13a2-5ef2-98d2-b839982664fa",
+                "id": "3f3a7027-de71-5038-b276-6b024ca7ee99",
                 "title": "أنظمة تشغيل الأجهزة الذكية (Smart Devices OS)",
                 "type": "lesson",
-                "lectures": [{ "id": "e8da61b9-3499-5a61-9858-44e56e00cba0", "name": "أنظمة تشغيل الأجهزة الذكية (Smart Devices OS)", "file": "", "length": 900 }]
+                "lectures": [{ "id": "d89c2c7e-5e48-57a1-af4e-53e0da01f8fc", "name": "أنظمة تشغيل الأجهزة الذكية (Smart Devices OS)", "file": "", "length": 900 }]
               }
             ]
           }

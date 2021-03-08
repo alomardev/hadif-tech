@@ -10,7 +10,7 @@
     <span class="title">{{ s1.title }}</span>
     <div class="actions" *ngIf="s1.actions?.length">
       <div class="action" *ngFor="let action of s1.actions" (click)="action.callback(s1)">
-        <app-icon type="block" [name]="action.icon" [size]="null" [stroke]="1.5"></app-icon>
+        <app-icon type="block" [name]="action.icon" [size]="null"></app-icon>
       </div>
     </div>
   </li>

@@ -8,14 +8,17 @@ import { PageContactUsComponent } from './pages/page-contact-us/page-contact-us.
 import { PageContentComponent } from './pages/page-content/page-content.component';
 import { PageLecturesComponent } from './pages/page-lectures/page-lectures.component';
 import { PageLoginComponent } from './pages/page-login/page-login.component';
+import { PageMaterialListComponent } from './pages/page-material-list/page-material-list.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageQuestionsVaultComponent } from './pages/page-questions-vault/page-questions-vault.component';
 import { PageQuizzesComponent } from './pages/page-quizzes/page-quizzes.component';
 import { PageResourcesComponent } from './pages/page-resources/page-resources.component';
 import { PageSlidesComponent } from './pages/page-slides/page-slides.component';
+import { AssignmentsMaterialListGenerator } from './utils/material-list-generators';
 
-export interface RoutingData {
+export interface PageData {
   pageTitle?: string;
+  [key: string]: any;
 }
 
 const routes: Routes = [
@@ -24,14 +27,14 @@ const routes: Routes = [
     component: PageLoginComponent,
     data: {
       pageTitle: 'تسجيل الدخول',
-    } as RoutingData,
+    } as PageData,
   },
   {
     path: 'register',
     component: PageLoginComponent,
     data: {
       pageTitle: 'إنشاء حساب',
-    } as RoutingData,
+    } as PageData,
   },
 
   { path: '', redirectTo: 'content/1', pathMatch: 'full' }, // Utilize auth guard
@@ -44,21 +47,21 @@ const routes: Routes = [
         component: PageResourcesComponent,
         data: {
           pageTitle: 'مصادر علمية',
-        } as RoutingData,
+        } as PageData,
       },
       {
         path: 'about',
         component: PageAboutComponent,
         data: {
           pageTitle: 'عن الموقع',
-        } as RoutingData,
+        } as PageData,
       },
       {
         path: 'contact-us',
         component: PageContactUsComponent,
         data: {
           pageTitle: 'تواصل معنا',
-        } as RoutingData,
+        } as PageData,
       },
 
       {
@@ -70,47 +73,48 @@ const routes: Routes = [
         component: PageLecturesComponent,
         data: {
           pageTitle: '',
-        } as RoutingData,
+        } as PageData,
       },
       {
         path: 'content/:grade/assignments',
-        component: PageAssignmentsComponent,
+        component: PageMaterialListComponent,
         data: {
           pageTitle: 'الأنشطة الورقية',
-        } as RoutingData,
+          generator: AssignmentsMaterialListGenerator,
+        } as PageData,
       },
       {
         path: 'content/:grade/quizzes',
         component: PageQuizzesComponent,
         data: {
           pageTitle: 'الاختبارات القصيرة',
-        } as RoutingData
+        } as PageData
       },
       {
         path: 'content/:grade/book',
         component: PageBookComponent,
         data: {
           pageTitle: 'الكتاب',
-        } as RoutingData,
+        } as PageData,
       },
       {
         path: 'content/:grade/slides',
         component: PageSlidesComponent,
         data: {
           pageTitle: 'العروض التقديمية',
-        } as RoutingData,
+        } as PageData,
       },
       {
         path: 'content/:grade/questions',
         component: PageQuestionsVaultComponent,
         data: {
           pageTitle: 'خزينة الأسئلة',
-        } as RoutingData,
+        } as PageData,
       },
     ],
   },
 
-  { path: '404', component: PageNotFoundComponent, data: { pageTitle: '404' } as RoutingData },
+  { path: '404', component: PageNotFoundComponent, data: { pageTitle: '404' } as PageData },
   { path: '**', redirectTo: '404' },
 ];
 

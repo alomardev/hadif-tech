@@ -17,3 +17,15 @@
   }
 }
 
+.icon-btn {
+  @include btn-reset;
+  &:disabled, &[disabled] {
+    cursor: not-allowed;
+  }
+  cursor: pointer;
+  border-radius: map-get($radius, 'input');
+  &:hover, &:focus {
+    background-color: $color-accent-highlight;
+  }
+  padding: map-get($spacers, 1);
+}

@@ -10,7 +10,7 @@ export class IconComponent implements OnInit {
   @Input() type: 'inline' | 'block' = 'inline';
   @Input() name: string = null;
   @Input() size: number = 24;
-  @Input() stroke: number = 2;
+  @Input() stroke: number = 1.5;
   @Input() color: string = 'currentColor';
 
   constructor() { }

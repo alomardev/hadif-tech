@@ -1,0 +1,47 @@
+.resource-section {
+  margin-top: map-get($spacers, 2);
+  & + .resource-section {
+    margin-top: map-get($spacers, 5);
+  }
+  .resource-section-title {
+    font-size: 1.1em;
+    font-weight: $font-weight-bold;
+    @include rtl {
+      margin-right: map-get($spacers, 3);
+    }
+    @include ltr {
+      margin-left: map-get($spacers, 3);
+    }
+  }
+  .card {
+    margin-top: map-get($spacers, 3);
+  }
+  .card + .card {
+    margin-top: map-get($spacers, 4);
+  }
+  .resource-item {
+    border: 1px solid $color-divider-normal;
+    border-radius: map-get($radius, 'input');
+    display: flex;
+    align-items: center;
+    padding: map-get($spacers, 2) map-get($spacers, 2);
+    height: 100%;
+
+    cursor: pointer;
+    &:hover {
+      background-color: $color-divider-lighter;
+    }
+    .resource-icon {
+      @include rtl {
+        margin-left: map-get($spacers, 1);
+      }
+      @include ltr {
+        margin-right: map-get($spacers, 1);
+      }
+    }
+    .resource-action {
+      color: $color-accent-base;
+      margin: map-get($spacers, 1) * -1;
+    }
+  }
+}

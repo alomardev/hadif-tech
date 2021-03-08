@@ -11,5 +11,6 @@ $body-color: $color-primary-gray-darker;
 $input-placeholder-color: $color-primary-gray-dark;
 $input-border-radius: map-get($radius, 'input');
 $card-border-radius: map-get($radius, 'card');
+$card-bg: $color-primary-white;
 $custom-select-border-radius: $input-border-radius;
 $hr-border-color: $color-primary-gray;
