@@ -1,8 +1,8 @@
-import { IAssignment, IGrade } from "../models/entities";
+import { IGrade, ISlide } from "../models/entities";
 import { SubjectType } from "../models/enums";
-import { MaterialListGenerator, MaterialListSection } from "../pages/page-material-list/page-material-list.component";
+import { MaterialListSection } from "../pages/page-material-list/page-material-list.component";
 
-export const AssignmentsMaterialListGenerator: MaterialListGenerator = (grade: IGrade) => {
+export function mapGradeToMaterialList(grade: IGrade, property: string, icon?: string) {
   const result = [];
   const { subjects } = grade;
   subjects.forEach(chapter => {
@@ -13,13 +13,14 @@ export const AssignmentsMaterialListGenerator: MaterialListGenerator = (grade: I
     };
     if (chapter.type === SubjectType.Chapter) {
       chapter.subjects?.forEach(unit => {
-        const items: IAssignment[] = [];
-        unit.assignments?.forEach(a => items.push(a));
-        unit.subjects?.forEach(lesson => lesson.assignments?.forEach(a => items.push(a)));
+        const items = [];
+        unit[property]?.forEach(a => items.push(a));
+        unit.subjects?.forEach(lesson => lesson[property]?.forEach(a => items.push(a)));
         if (items.length) {
           cards.push({
             title: unit.title,
             items,
+            icon,
           });
         }
       });
@@ -29,4 +30,4 @@ export const AssignmentsMaterialListGenerator: MaterialListGenerator = (grade: I
     }
   });
   return result;
-};
+}

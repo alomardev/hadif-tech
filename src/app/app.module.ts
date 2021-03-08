@@ -11,17 +11,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ContentExplorerScaffoldComponent } from './layout/content-explorer-scaffold/content-explorer-scaffold.component';
 import { SubjectsListComponent } from './ui-blocks/subjects-list/subjects-list.component';
 import { UiUnderDevelopmentComponent } from './ui-blocks/ui-under-development/ui-under-development.component';
-import { PageAssignmentsComponent } from './pages/page-assignments/page-assignments.component';
+import { PageAssignmentsComponent } from './pages/page-material-list/page-assignments.component';
 import { PageQuizzesComponent } from './pages/page-quizzes/page-quizzes.component';
 import { PageLecturesComponent } from './pages/page-lectures/page-lectures.component';
-import { PageSlidesComponent } from './pages/page-slides/page-slides.component';
+import { PageSlidesComponent } from './pages/page-material-list/page-slides.component';
 import { PageQuestionsVaultComponent } from './pages/page-questions-vault/page-questions-vault.component';
 import { PageBookComponent } from './pages/page-book/page-book.component';
 import { PageResourcesComponent } from './pages/page-resources/page-resources.component';
 import { PageAboutComponent } from './pages/page-about/page-about.component';
 import { PageContactUsComponent } from './pages/page-contact-us/page-contact-us.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { PageMaterialListComponent } from './pages/page-material-list/page-material-list.component';
 
 
 @NgModule({
@@ -45,7 +44,6 @@ import { PageMaterialListComponent } from './pages/page-material-list/page-mater
     PageAboutComponent,
     PageContactUsComponent,
     PageNotFoundComponent,
-    PageMaterialListComponent,
   ],
   imports: [
     BrowserModule,

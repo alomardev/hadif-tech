@@ -28,17 +28,15 @@ export interface ISubject {
   quizzes?: IQuiz[];
 }
 
-export interface ISlide {
+export interface IMaterial {
   id: string;
   name: string;
   file: string;
 }
 
-export interface IAssignment {
-  id: string;
-  name: string;
-  file: string;
-}
+export interface ISlide extends IMaterial { }
+
+export interface IAssignment extends IMaterial { }
 
 export interface ILecture {
   id: string;
