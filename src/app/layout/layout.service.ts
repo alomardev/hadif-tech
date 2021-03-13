@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { MenuItem } from './layout';
+import { MenuItem, MenuItemKeys } from './layout';
 
 @Injectable({
   providedIn: 'root'
@@ -12,19 +12,20 @@ export class LayoutService {
 
   private readonly menu: MenuItem[]  = [
     {
+      key: MenuItemKeys.grades,
       label: 'الصفوف الدراسية',
       menu: [
         { label: 'الصف الأول المتوسط', url: '/content/1' },
-        { label: 'الصف الثاني المتوسط', url: '/content/2' },
-        { label: 'الصف الثالث المتوسط', url: '/content/3' },
+        { label: 'الصف الثاني المتوسط', url: '/content/2', disabled: true },
+        { label: 'الصف الثالث المتوسط', url: '/content/3', disabled: true },
       ],
     },
     {
       label: 'الشرح التفاعلي',
       menu: [
         { label: 'الصف الأول المتوسط', url: '/content/1/lectures' },
-        { label: 'الصف الثاني المتوسط', url: '/content/2/lectures' },
-        { label: 'الصف الثالث المتوسط', url: '/content/3/lectures' },
+        { label: 'الصف الثاني المتوسط', url: '/content/2/lectures', disabled: true },
+        { label: 'الصف الثالث المتوسط', url: '/content/3/lectures', disabled: true },
       ],
     },
     { label: 'مصادر علمية', url: '/resources' },

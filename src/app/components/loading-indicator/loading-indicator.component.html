@@ -1,0 +1,8 @@
+<div *ngIf="!inline && loading" class="d-flex justify-content-center m-5">
+  <ng-template *ngTemplateOutlet="loadingSpinner"></ng-template>
+</div>
+<ng-template #loadingSpinner [ngIf]="inline && loading">
+  <div class="spinner-border" role="status"
+    [ngClass]="{ 'spinner-border-sm': size === 'sm', 'spinner-border-lg': size === 'lg' }">
+  </div>
+</ng-template>

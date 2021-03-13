@@ -1,6 +1,11 @@
+export const MenuItemKeys = {
+  grades: 'grades',
+}
+
 export interface MenuItem {
+  key?: string;
   label: string;
   url?: string;
   menu?: MenuItem[];
-  active?: boolean;
+  disabled?: boolean;
 }

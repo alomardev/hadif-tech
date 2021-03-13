@@ -13,6 +13,7 @@ import { PageQuestionsVaultComponent } from './pages/page-questions-vault/page-q
 import { PageQuizzesComponent } from './pages/page-quizzes/page-quizzes.component';
 import { PageResourcesComponent } from './pages/page-resources/page-resources.component';
 import { PageSlidesComponent } from './pages/page-material-list/page-slides.component';
+import { PageLandingComponent } from './pages/page-landing/page-landing.component';
 
 export interface PageData {
   pageTitle?: string;
@@ -35,7 +36,10 @@ const routes: Routes = [
     } as PageData,
   },
 
-  { path: '', redirectTo: 'content/1', pathMatch: 'full' }, // Utilize auth guard
+  {
+    path: '',
+    component: PageLandingComponent,
+  },
   {
     path: '',
     component: MasterLayoutComponent,

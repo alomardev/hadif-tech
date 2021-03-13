@@ -11,6 +11,7 @@
 @import 'layout/footer';
 @import 'layout/content-scaffold';
 @import 'layout/content';
+@import 'layout/landing';
 @import 'layout/login-page';
 
 @import 'components/subjects-list';
@@ -44,6 +45,9 @@ a {
   color: $color-accent-washed;
   &:hover {
     color: $color-accent-base;
+  }
+  &.disabled {
+    cursor: not-allowed;
   }
 }
 

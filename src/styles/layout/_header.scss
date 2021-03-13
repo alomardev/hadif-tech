@@ -116,9 +116,12 @@ $-badge-height: 34px;
               display: block;
               padding: map-get($spacers, 1) map-get($spacers, 2);
               border-radius: map-get($radius, 'default');
+              &.disabled {
+                color: $color-accent-washed;
+              }
             }
             &:hover {
-              .submenu-link {
+              .submenu-link:not(.disabled) {
                 background-color: $color-accent-highlight;
               }
             }

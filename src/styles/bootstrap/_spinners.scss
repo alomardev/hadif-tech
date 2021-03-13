@@ -28,6 +28,12 @@
   border-width: $spinner-border-width-sm;
 }
 
+.spinner-border-lg {
+  width: $spinner-width-lg;
+  height: $spinner-height-lg;
+  // border-width: $spinner-border-width-lg;
+}
+
 //
 // Growing circle
 //

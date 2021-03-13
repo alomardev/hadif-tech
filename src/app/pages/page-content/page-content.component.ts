@@ -1,6 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { LoadingIndicatorComponent } from 'src/app/components/loading-indicator/loading-indicator.component';
 import { IGrade } from 'src/app/models/entities';
 import { DataService } from 'src/app/services/data.service';
 import { SubjectsListAction } from 'src/app/ui-blocks/subjects-list/subjects-list.component';
@@ -28,9 +29,12 @@ export class PageContentComponent implements OnInit, OnDestroy {
     { icon: 'quiz', callback: console.log, enable: s => !!s.quizzes?.length },
   ];
 
+  private routerParamSubscription: Subscription;
+
   gradeNumber: number;
   grade: IGrade;
-  private routerParamSubscription: Subscription;
+
+  @ViewChild(LoadingIndicatorComponent, { static: true }) loadingIndicator: LoadingIndicatorComponent;
 
   constructor(private activatedRoute: ActivatedRoute, private dataService: DataService) { }
 
@@ -38,7 +42,9 @@ export class PageContentComponent implements OnInit, OnDestroy {
     this.routerParamSubscription = this.activatedRoute.params.subscribe(params => {
       this.grade = null;
       this.gradeNumber = +params.grade;
-      this.dataService.getGrade(+params.grade).subscribe(grade => {
+      this.dataService.getGrade(+params.grade).pipe(
+        this.loadingIndicator.pipe(),
+      ).subscribe(grade => {
         this.grade = grade;
       }, error => {});
     });

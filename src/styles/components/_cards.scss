@@ -1,7 +1,10 @@
 $-border-spacing: 4px;
+@mixin -card-shadow($elevation: 2) {
+  box-shadow: 0 (11px  * ($elevation / 2)) (11px  * ($elevation / 2)) (-6px * ($elevation / 2)) $color-divider-normal, 0 (2px  * ($elevation / 2)) (6px  * ($elevation / 2)) (1px  * ($elevation / 2)) $color-divider-normal;
+}
 .card {
   border: none;
-  box-shadow: 0 11px 11px -6px $color-divider-normal, 0 2px 6px 1px $color-divider-normal;
+  @include -card-shadow;
   overflow: hidden;
 
   .card-header {
@@ -20,6 +23,15 @@ $-border-spacing: 4px;
       right: $-border-spacing;
       background-color: $color-divider-lighter;
       border-radius: map-get($radius, 'card') - $-border-spacing;
+    }
+  }
+
+  &.raise-when-hover {
+    transition: box-shadow 200ms linear, transform 200ms ease-out;
+    transform: translateY(0);
+    &:hover {
+      @include -card-shadow(5);
+      transform: translateY(map-get($spacers, 1) / -2);
     }
   }
 

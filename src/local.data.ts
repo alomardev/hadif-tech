@@ -21,6 +21,7 @@ class DataContext {
       password === u.username.toLowerCase().trim();
     }) as IUserProfile;
   }
+
 }
 
 const LocalData = new DataContext();

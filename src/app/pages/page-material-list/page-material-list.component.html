@@ -1,4 +1,5 @@
 <app-content-explorer-scaffold [title]="title" [showGradeLink]="true">
+  <app-loading-indicator #loadingIndicator [inline]="false" size="lg"></app-loading-indicator>
   <div class="resource-section" *ngFor="let section of sections">
     <h3 class="resource-section-title">{{ section.title }}</h3>
     <section class="card" *ngFor="let card of section.cards">

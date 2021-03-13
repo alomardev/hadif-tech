@@ -21,6 +21,8 @@ import { PageResourcesComponent } from './pages/page-resources/page-resources.co
 import { PageAboutComponent } from './pages/page-about/page-about.component';
 import { PageContactUsComponent } from './pages/page-contact-us/page-contact-us.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
+import { PageLandingComponent } from './pages/page-landing/page-landing.component';
 
 
 @NgModule({
@@ -44,6 +46,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     PageAboutComponent,
     PageContactUsComponent,
     PageNotFoundComponent,
+    LoadingIndicatorComponent,
+    PageLandingComponent,
   ],
   imports: [
     BrowserModule,

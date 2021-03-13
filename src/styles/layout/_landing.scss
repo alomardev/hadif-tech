@@ -1,0 +1,55 @@
+$-max-width: 800px;
+$-subtitle-font-size: 1.44em;
+.landing {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, darken($color-accent-dark, 5%), $color-accent-dark 30%, $color-accent-base 100%);
+  min-height: 100vh;
+  .landing-wrapper {
+    margin-bottom: map-get($spacers, 4);
+    .title-wrapper {
+      color: $color-primary-white;
+      margin-top: map-get($spacers, 5) + map-get($spacers, 3);
+      margin-bottom: map-get($spacers, 5);
+      font-weight: $font-weight-medium;
+      text-align: center;
+      .title {
+        margin-bottom: 0.1rem;
+      }
+      .subtitle {
+        color: $color-accent-light;
+        font-size: $-subtitle-font-size;
+      }
+    }
+  }
+  .footer {
+    margin-left: map-get($spacers, 3);
+    margin-right: map-get($spacers, 3);
+    border-top: 1px solid $color-divider-dark-normal;
+    background-color: transparent;
+    margin-top: auto;
+  }
+  .landing-content {
+    margin: 0 auto;
+    max-width: $-max-width;
+    a.card {
+      @include a-reset;
+    }
+    .card {
+      text-align: center;
+      &.disabled {
+        .card-body {
+          font-size: unset;
+        }
+      }
+    }
+    .card-body {
+      font-size: 4em;
+      display: flex;
+      flex-direction: column;
+      height: 150px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

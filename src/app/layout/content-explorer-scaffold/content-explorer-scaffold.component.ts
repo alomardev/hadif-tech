@@ -23,7 +23,7 @@ export class ContentExplorerScaffoldComponent implements OnInit {
 
   ngOnInit(): void {
     this.routerParamSubscription = this.activatedRoute.params.subscribe(({ grade }) => {
-      this.dataService.getGradeName(grade).subscribe(name => {
+      this.dataService.getGradeName(+grade).subscribe(name => {
         if (name) {
           this.link = { label: name, path: `/content/${grade}` };
         }

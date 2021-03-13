@@ -28,7 +28,8 @@ export class DataService {
     if (this.gradeNames[grade]) {
       return of(this.gradeNames[grade]);
     }
-    return delayedSuccess(LocalData.getGrade(grade)?.name);
+    const result = LocalData.getGrade(grade);
+    return delayedSuccess(result.name, 100);
   }
 
 }

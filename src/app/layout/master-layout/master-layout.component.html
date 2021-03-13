@@ -7,7 +7,10 @@
       <li class="menu-item" [ngClass]="{ 'has-submenu': item.menu?.length }" *ngFor="let item of (layoutService.getMenu() | async)">
         <span class="menu-item-label"><a class="menu-link" [routerLink]="item.url">{{ item.label }} <app-icon *ngIf="item.menu?.length" name='chevron-down' [size]="20"></app-icon></a></span>
         <ul class="submenu" *ngIf="item.menu?.length">
-          <li class="submenu-item" *ngFor="let subitem of item.menu"><a class="submenu-link" [routerLink]="subitem.url">{{ subitem.label }}</a></li>
+          <li class="submenu-item" *ngFor="let subitem of item.menu">
+            <a class="submenu-link" [routerLink]="subitem.url" *ngIf="!subitem.disabled">{{ subitem.label }}</a>
+            <a class="submenu-link disabled" *ngIf="subitem.disabled">{{ subitem.label }}</a>
+          </li>
         </ul>
       </li>
     </ul>
