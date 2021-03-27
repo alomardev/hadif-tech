@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { MenuItem, MenuItemKeys } from 'src/app/layout/layout';
-import { LayoutService } from 'src/app/layout/layout.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-page-landing',

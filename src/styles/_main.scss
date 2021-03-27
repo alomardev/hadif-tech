@@ -7,17 +7,17 @@
 @import 'icons';
 
 @import 'layout/master-layout';
-@import 'layout/header';
-@import 'layout/footer';
 @import 'layout/content-scaffold';
 @import 'layout/content';
 @import 'layout/landing';
 @import 'layout/login-page';
+@import 'layout/master-detail';
 
 @import 'components/subjects-list';
 @import 'components/iconic-message';
 @import 'components/resource-items';
 @import 'components/cards';
+@import 'components/video-player';
 
 body, html {
   background-color: $color-main-background;

@@ -1,1 +1,19 @@
-<app-ui-under-development pageName="الشرح التفاعلي"></app-ui-under-development>
+<app-loading-indicator #loadingIndicator [inline]="false" size="lg"></app-loading-indicator>
+<ng-template [ngIf]="subjects">
+  <div class="master-container">
+    <div class="master-wrapper">
+      <div class="master-header">
+        <div class="title-wrapper">
+          <div class="title">الشرح التفاعلي</div>
+          <a class="subtitle" [routerLink]="link.path">{{ link.label }}</a>
+        </div>
+      </div>
+      <div class="master-body">
+        <app-subjects-list [subjects]="subjects" (itemClick)="onItemClick($event)" [selectedSubjectId]="currentSubject?.id" [clickability]="isClickable"></app-subjects-list>
+      </div>
+    </div>
+  </div>
+  <div class="detail-container">
+    <app-video-player [source]="currentSubject?.lecture ? '/assets/materials/' + currentSubject?.lecture.file : null"></app-video-player>
+  </div>
+</ng-template>

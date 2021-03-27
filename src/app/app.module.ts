@@ -23,6 +23,7 @@ import { PageContactUsComponent } from './pages/page-contact-us/page-contact-us.
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 import { PageLandingComponent } from './pages/page-landing/page-landing.component';
+import { VideoPlayerComponent } from './components/video-player/video-player.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { PageLandingComponent } from './pages/page-landing/page-landing.componen
     PageNotFoundComponent,
     LoadingIndicatorComponent,
     PageLandingComponent,
+    VideoPlayerComponent,
   ],
   imports: [
     BrowserModule,

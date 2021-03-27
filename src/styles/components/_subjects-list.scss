@@ -2,6 +2,7 @@
 $-padding-x: map-get($spacers, 3) + map-get($spacers, 1);
 $-padding-y: map-get($spacers, 2) + map-get($spacers, 1);
 $-icon-size: 22px;
+$-selected-arrow-size: 30px;
 
 %padding-reset {
   margin-left: 0;
@@ -16,11 +17,24 @@ $-icon-size: 22px;
       padding-right: $-padding-x;
     }
   }
+  &.hoverable::before {
+    display: none;
+  }
+  &::after {
+    @include rtl {
+      left: 0;
+    }
+    @include ltr {
+      right: 0;
+    }
+  }
 }
 .subjects-list {
+  overflow: hidden;
   color: $color-primary-gray-darker;
   @include ul-reset;
   li {
+    cursor: default;
     position: relative;
     margin-left: $-padding-x;
     margin-right: $-padding-x;
@@ -47,6 +61,78 @@ $-icon-size: 22px;
     }
     &:last-child {
       border: none;
+    }
+
+    &.hoverable {
+      cursor: pointer;
+      &::before { // extending clickable area
+        position: absolute;
+        content: '';
+        display: block;
+        top: 0;
+        left: $-padding-y * -2;
+        width: calc(100% + #{$-padding-x * 2});
+        height: 100%;
+        background-color: transparent;
+      }
+      &:hover {
+        .title {
+          @include rtl {
+            transform: translateX(map-get($spacers, 1) * -1);
+          }
+          @include ltr {
+            transform: translateX(map-get($spacers, 1));
+          }
+          color: $color-accent-dark;
+        }
+      }
+
+      .title {
+        transition: transform 200ms ease-out;
+      }
+    }
+
+    &.selected {
+      &::after {
+        @include rtl {
+          transform: translateX(4px);
+        }
+        @include ltr {
+          transform: translateX(-4px);
+        }
+      }
+      .title {
+        color: $color-accent-dark;
+        font-weight: $font-weight-bold;
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: $-selected-arrow-size;
+      height: $-selected-arrow-size;
+      border-top: $-selected-arrow-size / 2 solid transparent;
+      border-bottom: $-selected-arrow-size / 2 solid transparent;
+      position: absolute;
+      top: calc(50% - #{$-selected-arrow-size / 2});
+      @include rtl {
+        border-left: $-selected-arrow-size / 2 solid $color-divider-normal;
+        border-right: $-selected-arrow-size / 2 solid transparent;
+        left: $-padding-x * -1;
+        transform: translateX($-selected-arrow-size / 2 * -1 - 5px);
+      }
+      @include ltr {
+        border-right: $-selected-arrow-size / 2 solid $color-divider-normal;
+        border-left: $-selected-arrow-size / 2 solid transparent;
+        right: $-padding-x * -1;
+        transform: translateX($-selected-arrow-size / 2 + 5px);
+      }
+      transition: transform 200ms ease-out;
+    }
+
+    .title {
+      display: block;
+      transform: translateX(0);
     }
 
     .actions {

@@ -5,8 +5,11 @@
       'type-unit': s1.type === SubjectType.Unit,
       'type-lesson': s1.type === SubjectType.Lesson,
       'remove-border': s1.nextType === SubjectType.Chapter,
-      'wide-border': s1.type === SubjectType.Lesson && s1.nextType === SubjectType.Unit
-    }">
+      'wide-border': s1.type === SubjectType.Lesson && s1.nextType === SubjectType.Unit,
+      'hoverable': s1.clickable,
+      'selected': s1.selected
+    }"
+    (click)="resolveClick(s1)">
     <span class="title">{{ s1.title }}</span>
     <div class="actions" *ngIf="s1.actions?.length">
       <div class="action" *ngFor="let action of s1.actions" (click)="action.callback(s1)">

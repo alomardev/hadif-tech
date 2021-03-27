@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IGrade } from 'src/app/models/entities';
+import { IGrade, IMaterial } from 'src/app/models/entities';
 import { DataService } from 'src/app/services/data.service';
 import { mapGradeToMaterialList } from 'src/app/utils/grade-material-mapper';
 import { PageMaterialListComponent } from './page-material-list.component';

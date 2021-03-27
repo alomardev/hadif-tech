@@ -10,7 +10,7 @@
             <div class="resource-item">
               <div class="resource-icon"><app-icon [name]="item.icon"></app-icon></div>
               <div class="resource-label">{{ item.name }}</div>
-              <button type="button" class="resource-action icon-btn ml-auto"><app-icon name="download"></app-icon></button>
+              <button type="button" class="resource-action btn icon-btn ml-auto" (click)="onItemClick(item)"><app-icon name="download"></app-icon></button>
             </div>
           </div>
         </div>

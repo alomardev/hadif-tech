@@ -4,7 +4,7 @@ export interface IGrade {
   id: string;
   grade: number;
   name: string;
-  book: IBook;
+  book: IBook | IBook[];
   subjects: ISubject[];
   questions?: IQuestion[];
 }
@@ -24,7 +24,7 @@ export interface ISubject {
   subjects?: ISubject[];
   slides?: ISlide[];
   assignments?: IAssignment[];
-  lectures?: ILecture[];
+  lecture?: ILecture;
   quizzes?: IQuiz[];
 }
 
@@ -47,7 +47,6 @@ export interface ILecture {
     position: number;
     data: IQuestion;
   }[];
-  length: number;
 }
 
 export interface IQuiz {

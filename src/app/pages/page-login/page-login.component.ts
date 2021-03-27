@@ -53,8 +53,8 @@ export class PageLoginComponent implements OnInit {
 
   setSection(section: LoginSection) {
     const newUrl = this.location.path().replace(new RegExp(`/${this.section}($|/$|/\\?.*$|\\?.*$)`), `/${section}$1`);
-    this.section = section;
     this.location.replaceState(newUrl);
+    this.section = section;
   }
 
   register() {

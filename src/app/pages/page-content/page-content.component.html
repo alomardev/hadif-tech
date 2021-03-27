@@ -2,7 +2,7 @@
   <app-content-explorer-scaffold [title]="grade.name">
     <div class="content-links">
       <div class="spacer" *ngFor="let l of links">
-        <a class="content-link" [routerLink]="l.link">
+        <a class="content-link" [routerLink]="l.link" (click)="l.onclick()">
           <div class="icon-container">
             <app-icon type="block" [name]="l.icon" [size]="null"></app-icon>
           </div>

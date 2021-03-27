@@ -70,8 +70,9 @@ const routes: Routes = [
         path: 'content/:grade',
         component: PageContentComponent,
       },
+      { path: 'content/:grade/lectures', redirectTo: 'content/:grade/lectures/recent', pathMatch: 'full' },
       {
-        path: 'content/:grade/lectures',
+        path: 'content/:grade/lectures/:id',
         component: PageLecturesComponent,
         data: {
           pageTitle: '',

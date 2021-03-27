@@ -1,0 +1,8 @@
+<div [hidden]="!source">
+  <video #videoElement class="video-js vjs-16-9" controls preload="none"></video>
+</div>
+<div *ngIf="!source" class="embed-responsive embed-responsive-16by9">
+  <div class="embed-responsive-item d-flex align-items-center justify-content-center">
+    <div class="h2">اختر الدرس من القائمة</div>
+  </div>
+</div>
