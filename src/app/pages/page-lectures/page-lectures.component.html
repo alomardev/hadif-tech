@@ -15,5 +15,8 @@
   </div>
   <div class="detail-container">
     <app-video-player [source]="currentSubject?.lecture ? '/assets/materials/' + currentSubject?.lecture.file : null"></app-video-player>
+    <div class="m-3">
+      <span class="h2">{{ currentSubject?.title }}</span>
+    </div>
   </div>
 </ng-template>
