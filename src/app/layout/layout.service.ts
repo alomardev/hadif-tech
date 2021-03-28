@@ -29,7 +29,7 @@ export class LayoutService {
       ],
     },
     { label: 'مصادر علمية', url: '/resources' },
-    { label: 'عن الموقع', url: '/about' },
+    // { label: 'عن الموقع', url: '/about' },
     { label: 'تواصل معنا', url: '/contact-us' },
   ];
 

@@ -38,7 +38,7 @@ export abstract class PageMaterialListComponent implements OnInit, OnDestroy {
 
   onItemClick(item: IMaterial) {
     if (item.file) {
-      saveAs(`/assets/materials/${item.file}`, `${item.name}.${item.file.match(/[^.]+$/g)[0]}`);
+      saveAs(`assets/materials/${item.file}`, `${item.name}.${item.file.match(/[^.]+$/g)[0]}`);
     }
   }
 

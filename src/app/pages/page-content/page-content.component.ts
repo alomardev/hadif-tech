@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LoadingIndicatorComponent } from 'src/app/components/loading-indicator/loading-indicator.component';
-import { IBook, IGrade } from 'src/app/models/entities';
+import { IBook, IGrade, ISubject } from 'src/app/models/entities';
 import { DataService } from 'src/app/services/data.service';
 import { SubjectsListAction } from 'src/app/ui-blocks/subjects-list/subjects-list.component';
 
@@ -24,7 +24,7 @@ export class PageContentComponent implements OnInit, OnDestroy {
         book = this.grade.book;
       }
       if (book.file) {
-        window.open(`/assets/materials/${book.file}`, '_blank');
+        window.open(`assets/materials/${book.file}`, '_blank');
       }
     } },
     { label: 'اختبارات قصيرة', icon: 'quiz', link: 'quizzes' },
@@ -33,10 +33,19 @@ export class PageContentComponent implements OnInit, OnDestroy {
   ];
 
   readonly subjectsListActions: SubjectsListAction[] = [
-    { icon: 'lecture', callback: console.log, show: s => !!s.lecture },
-    { icon: 'presentation', callback: console.log, show: s => !!s.slides?.length },
-    { icon: 'paper', callback: console.log, show: s => !!s.assignments?.length },
-    { icon: 'quiz', callback: console.log, show: s => !!s.quizzes?.length },
+    { icon: 'lecture', callback: (subject: ISubject) => {
+      this.router.navigateByUrl(`/content/${this.gradeNumber}/lectures/${subject.id}`)
+    }, show: s => !!s.lecture },
+    { icon: 'presentation', callback: (subject: ISubject) => {
+      const item = subject.slides[0];
+      saveAs(`assets/materials/${item.file}`, `${item.name}.${item.file.match(/[^.]+$/g)[0]}`);
+    }, show: s => !!s.slides?.length },
+    { icon: 'paper', callback: (subject: ISubject) => {
+      const item = subject.assignments[0];
+      saveAs(`assets/materials/${item.file}`, `${item.name}.${item.file.match(/[^.]+$/g)[0]}`);
+    }, show: s => !!s.assignments?.length },
+    { icon: 'quiz', callback: (subject: ISubject) => {
+    }, show: s => !!s.quizzes?.length },
   ];
 
   private routerParamSubscription: Subscription;
@@ -49,6 +58,7 @@ export class PageContentComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private dataService: DataService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
